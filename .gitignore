@@ -1,6 +1,11 @@
 # keymaps
+/keyboards/*/*
+/keyboards/*/*/*
+/keyboards/*/*/*/*
+/keyboards/*/*/*/*/*
+/keyboards/*/*/*/*/*/*
 
-/keyboards/*
+
 
 # Junk files
 *.bak
