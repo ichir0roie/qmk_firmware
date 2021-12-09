@@ -1,9 +1,5 @@
 # keymaps
-/keyboards/*/*
-/keyboards/*/*/*
-/keyboards/*/*/*/*
-/keyboards/*/*/*/*/*
-/keyboards/*/*/*/*/*/*
+keyboards/
 
 
 
