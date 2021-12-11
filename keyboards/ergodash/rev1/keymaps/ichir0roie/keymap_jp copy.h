@@ -3,8 +3,10 @@
 #define JP_MINS KC_MINS    // - //3
 #define JP_DQUO S(JP_2)    // " //4
 
-#define JP_TILD S(JP_CIRC) // ~ //2
-#define JP_PERC S(JP_5)    // % //3
+#define JP_TILD S(JP_CIRC) // ~ // 1
+#define JP_DLR  S(JP_4)    // $ // 2
+#define JP_PERC S(JP_5)    // % // 3
+#define JP_CIRC KC_EQL     // ^ // 4
 
 
 #define JP_QUOT S(JP_7)    // ' // 7
@@ -13,13 +15,11 @@
 #define JP_LBRC KC_RBRC    // [ // 0
 
 #define JP_GRV  S(JP_AT)   // ` // 7
-#define JP_DLR  S(JP_4)    // $ // 8
-#define JP_CIRC KC_EQL     // ^ // 9
+#define JP_RPRN S(JP_9)    // ) // 8
+#define JP_RCBR S(JP_RBRC) // } // 9
+#define JP_RBRC KC_NUHS    // ] // 0
 
 
-#define JP_RPRN S(JP_9)    // ) //
-#define JP_RCBR S(JP_RBRC) // } //
-#define JP_RBRC KC_NUHS    // ] //
 
 
 #define JP_AT   KC_LBRC    // @ // l5
