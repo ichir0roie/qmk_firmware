@@ -45,7 +45,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #define MOUSEKEY_INTERVAL 16 // 50 /* Time between cursor movements in milliseconds */
 #define MOUSEKEY_MOVE_DELTA 1 // 5 /* Step size */
 #define MOUSEKEY_MAX_SPEED 75 // 10 /* Maximum cursor speed at which acceleration stops */
-#define MOUSEKEY_TIME_TO_MAX 40 // 20 /* Time until maximum cursor speed is reached */
+#define MOUSEKEY_TIME_TO_MAX 50 // 20 /* Time until maximum cursor speed is reached */
 
 #define MOUSEKEY_WHEEL_DELAY 0 // 300 /* Delay between pressing a wheel key and wheel movement */
 #define MOUSEKEY_WHEEL_INTERVAL 100 // 100 /* Time between wheel movements */
