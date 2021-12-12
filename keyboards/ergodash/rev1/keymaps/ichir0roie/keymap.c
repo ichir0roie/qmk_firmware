@@ -2,6 +2,7 @@
 #include <keymap_jp.h>
 #include <sendstring_jis.h>
 
+
 enum custom_keycodes {
         QMKBEST = SAFE_RANGE,
         Custom1,
@@ -11,14 +12,11 @@ enum custom_keycodes {
 
 bool process_record_user(uint16_t keycode, keyrecord_t *record) {
     switch (keycode) {
-        case QMKBEST:
-            if (record->event.pressed) SEND_STRING("QMK is the best thing ever!");break;
-        case Custom1:
-            if (record->event.pressed) SEND_STRING("ssa");break;
-        case Custom2:
-            if (record->event.pressed) SEND_STRING("ssb");break;
-        case Custom3:
-            if (record->event.pressed) SEND_STRING("ssc");break;
+        case QMKBEST:if (record->event.pressed) SEND_STRING("QMK is the best thing ever!");break;
+        case Custom1:if (record->event.pressed) SEND_STRING("ssa");break;
+        case Custom2:if (record->event.pressed) SEND_STRING("ssb");break;
+        case Custom3:if (record->event.pressed) SEND_STRING("ssc");break;
+        // case :if (record->event.pressed) SEND_STRING("");break;
     }
     return true;
 };
@@ -40,6 +38,9 @@ const key_override_t to9 = ko_make_basic(MOD_MASK_SHIFT, JP_EQL, JP_EXLM );
 const key_override_t to10 = ko_make_basic(MOD_MASK_SHIFT, JP_SCLN, JP_AMPR );
 const key_override_t to11 = ko_make_basic(MOD_MASK_SHIFT, JP_COLN, JP_QUES );
 const key_override_t to12 = ko_make_basic(MOD_MASK_SHIFT, JP_SLSH, JP_PIPE );
+
+
+
 
 // const key_override_t to = ko_make_basic(MOD_MASK_SHIFT, JP_, JP_ );
 

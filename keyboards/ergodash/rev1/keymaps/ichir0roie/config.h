@@ -37,6 +37,8 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #define TAPPING_TOGGLE 2
 
 
+
+
 #define MK_COMBINED
 
 #define MOUSEKEY_DELAY 50 // 300 /* Delay between pressing a movement key and cursor movement */
