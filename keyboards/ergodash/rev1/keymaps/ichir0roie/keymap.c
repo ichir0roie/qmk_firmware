@@ -14,11 +14,11 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
         case QMKBEST:
             if (record->event.pressed) SEND_STRING("QMK is the best thing ever!");break;
         case Custom1:
-            if (record->event.pressed) SEND_STRING("cstmone");break;
+            if (record->event.pressed) SEND_STRING("ssa");break;
         case Custom2:
-            if (record->event.pressed) SEND_STRING("cstmtwo");break;
+            if (record->event.pressed) SEND_STRING("ssb");break;
         case Custom3:
-            if (record->event.pressed) SEND_STRING("cstmthree");break;
+            if (record->event.pressed) SEND_STRING("ssc");break;
     }
     return true;
 };
