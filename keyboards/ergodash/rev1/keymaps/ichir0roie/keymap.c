@@ -40,8 +40,6 @@ const key_override_t to11 = ko_make_basic(MOD_MASK_SHIFT, JP_COLN, JP_QUES );
 const key_override_t to12 = ko_make_basic(MOD_MASK_SHIFT, JP_SLSH, JP_PIPE );
 
 
-
-
 // const key_override_t to = ko_make_basic(MOD_MASK_SHIFT, JP_, JP_ );
 
 // This globally defines all key overrides to be used
