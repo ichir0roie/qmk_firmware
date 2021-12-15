@@ -1,4 +1,3 @@
-#include QMK_KEYBOARD_H
 #include <keymap_jp.h>
 #include <sendstring_jis.h>
 
@@ -8,6 +7,7 @@ enum custom_keycodes {
         Custom1,
         Custom2,
         Custom3,
+        Custom4,
     };
 
 bool process_record_user(uint16_t keycode, keyrecord_t *record) {
@@ -16,6 +16,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
         case Custom1:if (record->event.pressed) SEND_STRING("ssa");break;
         case Custom2:if (record->event.pressed) SEND_STRING("ssb");break;
         case Custom3:if (record->event.pressed) SEND_STRING("ssc");break;
+        case Custom4:if (record->event.pressed) SEND_STRING("ssd");break;
         // case :if (record->event.pressed) SEND_STRING("");break;
     }
     return true;
