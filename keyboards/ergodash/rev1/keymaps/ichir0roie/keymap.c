@@ -8,6 +8,10 @@ enum custom_keycodes {
         Custom2,
         Custom3,
         Custom4,
+        Custom5,
+        Custom6,
+        Custom7,
+        Custom8,
     };
 
 bool process_record_user(uint16_t keycode, keyrecord_t *record) {
@@ -17,6 +21,10 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
         case Custom2:if (record->event.pressed) SEND_STRING("ssb");break;
         case Custom3:if (record->event.pressed) SEND_STRING("ssc");break;
         case Custom4:if (record->event.pressed) SEND_STRING("ssd");break;
+        case Custom5:if (record->event.pressed) SEND_STRING("sse");break;
+        case Custom6:if (record->event.pressed) SEND_STRING("ssf");break;
+        case Custom7:if (record->event.pressed) SEND_STRING("ssg");break;
+        case Custom8:if (record->event.pressed) SEND_STRING("ssh");break;
         // case :if (record->event.pressed) SEND_STRING("");break;
     }
     return true;
