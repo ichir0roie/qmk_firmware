@@ -14,11 +14,11 @@ qmk flash -kb ergodash -km ichir0roie
 
 mv Downloads/ichir0roie.json qmk_firmware/keyboards/ergodash/keymaps/ichir0roie/ichir0roie.json;qmk json2c -o qmk_firmware/keyboards/ergodash/keymaps/ichir0roie/keymapAG.c qmk_firmware/keyboards/ergodash/keymaps/ichir0roie/ichir0roie.json;qmk flash -kb ergodash -km ichir0roie
 
---------/ichir0roie--------
+--------helix/ichir0roie--------
 
-mv Downloads/ichir0roie.json qmk_firmware/keyboards//keymaps/ichir0roie/ichir0roie.json
-qmk json2c -o qmk_firmware/keyboards//keymaps/ichir0roie/keymapAG.c qmk_firmware/keyboards//keymaps/ichir0roie/ichir0roie.json
+mv Downloads/ichir0roie.json qmk_firmware/keyboards/helix/pico/keymaps/ichir0roie/ichir0roie.json
+qmk json2c -o qmk_firmware/keyboards/helix/pico/keymaps/ichir0roie/keymapAG.c qmk_firmware/keyboards/helix/pico/keymaps/ichir0roie/ichir0roie.json
 qmk flash -kb  -km ichir0roie
 
-mv Downloads/ichir0roie.json qmk_firmware/keyboards//keymaps/ichir0roie/ichir0roie.json;qmk json2c -o qmk_firmware/keyboards//keymaps/ichir0roie/keymapAG.c qmk_firmware/keyboards//keymaps/ichir0roie/ichir0roie.json;qmk flash -kb  -km ichir0roie
+mv Downloads/ichir0roie.json qmk_firmware/keyboards/helix/pico/keymaps/ichir0roie/ichir0roie.json;qmk json2c -o qmk_firmware/keyboards/helix/pico/keymaps/ichir0roie/keymapAG.c qmk_firmware/keyboards/helix/pico/keymaps/ichir0roie/ichir0roie.json;qmk flash -kb  -km ichir0roie
 
