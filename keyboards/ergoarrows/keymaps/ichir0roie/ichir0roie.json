@@ -62,7 +62,7 @@
       "KC_COMM",
       "KC_DOT",
       "ANY(JP_SLSH)",
-      "KC_RALT",
+      "MO(1)",
       "KC_LGUI",
       "KC_LALT",
       "KC_LSFT",
