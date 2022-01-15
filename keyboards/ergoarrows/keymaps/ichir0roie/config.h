@@ -67,15 +67,15 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #define MK_C_INTERVAL_2 16 // 16  // Time between cursor movements (KC_ACL2)  //
 
 
-#define MK_W_OFFSET_UNMOD 10 // 1  // Scroll steps per scroll action (unmodified)  //
+#define MK_W_OFFSET_UNMOD 1 // 1  // Scroll steps per scroll action (unmodified)  //
 #define MK_W_OFFSET_0 1 // 1  // Scroll steps per scroll action (KC_ACL0)  //
-#define MK_W_OFFSET_1 3 // 1  // Scroll steps per scroll action (KC_ACL1)  //
-#define MK_W_OFFSET_2 20 // 1  // Scroll steps per scroll action (KC_ACL2)  //
+#define MK_W_OFFSET_1 9 // 1  // Scroll steps per scroll action (KC_ACL1)  //
+#define MK_W_OFFSET_2 91 // 1  // Scroll steps per scroll action (KC_ACL2)  //
 
-#define MK_W_INTERVAL_UNMOD 16 // 40  // Time between scroll steps (unmodified)  //
-#define MK_W_INTERVAL_0 16// 360  // Time between scroll steps (KC_ACL0)  //
-#define MK_W_INTERVAL_1 16 // 120  // Time between scroll steps (KC_ACL1)  //
-#define MK_W_INTERVAL_2  16 // 20  // Time between scroll steps (KC_ACL2)
+#define MK_W_INTERVAL_UNMOD 64 // 40  // Time between scroll steps (unmodified)  //
+#define MK_W_INTERVAL_0 64// 360  // Time between scroll steps (KC_ACL0)  //
+#define MK_W_INTERVAL_1 64 // 120  // Time between scroll steps (KC_ACL1)  //
+#define MK_W_INTERVAL_2 64 // 20  // Time between scroll steps (KC_ACL2)
 
 
 // #define MK_KINETIC_SPEED // 未定義 // キネティックモードを有効にする
