@@ -39,43 +39,43 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 
 
-#define MK_COMBINED
+// #define MK_COMBINED
 
-#define MOUSEKEY_DELAY 50 // 300 /* Delay between pressing a movement key and cursor movement */
-#define MOUSEKEY_INTERVAL 16 // 50 /* Time between cursor movements in milliseconds */
-#define MOUSEKEY_MOVE_DELTA 1 // 5 /* Step size */
-#define MOUSEKEY_MAX_SPEED 50 // 10 /* Maximum cursor speed at which acceleration stops */
-#define MOUSEKEY_TIME_TO_MAX 60 // 20 /* Time until maximum cursor speed is reached */
+// #define MOUSEKEY_DELAY 50 // 300 /* Delay between pressing a movement key and cursor movement */
+// #define MOUSEKEY_INTERVAL 16 // 50 /* Time between cursor movements in milliseconds */
+// #define MOUSEKEY_MOVE_DELTA 1 // 5 /* Step size */
+// #define MOUSEKEY_MAX_SPEED 50 // 10 /* Maximum cursor speed at which acceleration stops */
+// #define MOUSEKEY_TIME_TO_MAX 60 // 20 /* Time until maximum cursor speed is reached */
 
-#define MOUSEKEY_WHEEL_DELAY 300 // 300 /* Delay between pressing a wheel key and wheel movement */
-#define MOUSEKEY_WHEEL_INTERVAL 100 // 100 /* Time between wheel movements */
-#define MOUSEKEY_WHEEL_MAX_SPEED 20 // 8 /* Maximum number of scroll steps per scroll action */
-#define MOUSEKEY_WHEEL_TIME_TO_MAX 20 // 40 /* Time until maximum scroll speed is reached */
-
-
-// #define MK_3_SPEED
-// #define MK_MOMENTARY_ACCEL
-
-// #define MK_C_OFFSET_0 1 // 1  // Cursor offset per movement (KC_ACL0)  //
-// #define MK_C_OFFSET_UNMOD 5 // 16  // Cursor offset per movement (unmodified)  //
-// #define MK_C_OFFSET_1 25 // 4  // Cursor offset per movement (KC_ACL1)  //
-// #define MK_C_OFFSET_2 125 // 32  // Cursor offset per movement (KC_ACL2)  //
-
-// #define MK_C_INTERVAL_UNMOD 16 // 16  // Time between cursor movements (unmodified)  //
-// #define MK_C_INTERVAL_0 16 // 32  // Time between cursor movements (KC_ACL0)  //
-// #define MK_C_INTERVAL_1 16 // 16  // Time between cursor movements (KC_ACL1)  //
-// #define MK_C_INTERVAL_2 16 // 16  // Time between cursor movements (KC_ACL2)  //
+// #define MOUSEKEY_WHEEL_DELAY 300 // 300 /* Delay between pressing a wheel key and wheel movement */
+// #define MOUSEKEY_WHEEL_INTERVAL 100 // 100 /* Time between wheel movements */
+// #define MOUSEKEY_WHEEL_MAX_SPEED 20 // 8 /* Maximum number of scroll steps per scroll action */
+// #define MOUSEKEY_WHEEL_TIME_TO_MAX 20 // 40 /* Time until maximum scroll speed is reached */
 
 
-// #define MK_W_OFFSET_0 1 // 1  // Scroll steps per scroll action (KC_ACL0)  //
-// #define MK_W_INTERVAL_0 720// 360  // Time between scroll steps (KC_ACL0)  //
-// #define MK_W_OFFSET_UNMOD 1 // 1  // Scroll steps per scroll action (unmodified)  //
-// #define MK_W_INTERVAL_UNMOD 360 // 40  // Time between scroll steps (unmodified)  //
-// #define MK_W_OFFSET_1 1 // 1  // Scroll steps per scroll action (KC_ACL1)  //
-// #define MK_W_INTERVAL_1 180 // 120  // Time between scroll steps (KC_ACL1)  //
-// #define MK_W_OFFSET_2 1 // 1  // Scroll steps per scroll action (KC_ACL2)  //
-// #define MK_W_INTERVAL_2  90 // 20  // Time between scroll steps (KC_ACL2)
+#define MK_3_SPEED
+#define MK_MOMENTARY_ACCEL
 
+#define MK_C_OFFSET_UNMOD 20 // 16  // Cursor offset per movement (unmodified)  //
+#define MK_C_OFFSET_0 1 // 1  // Cursor offset per movement (KC_ACL0)  //
+#define MK_C_OFFSET_1 3 // 4  // Cursor offset per movement (KC_ACL1)  //
+#define MK_C_OFFSET_2 50 // 32  // Cursor offset per movement (KC_ACL2)  //
+
+#define MK_C_INTERVAL_UNMOD 16 // 16  // Time between cursor movements (unmodified)  //
+#define MK_C_INTERVAL_0 16 // 32  // Time between cursor movements (KC_ACL0)  //
+#define MK_C_INTERVAL_1 16 // 16  // Time between cursor movements (KC_ACL1)  //
+#define MK_C_INTERVAL_2 16 // 16  // Time between cursor movements (KC_ACL2)  //
+
+
+#define MK_W_OFFSET_UNMOD 10 // 1  // Scroll steps per scroll action (unmodified)  //
+#define MK_W_OFFSET_0 1 // 1  // Scroll steps per scroll action (KC_ACL0)  //
+#define MK_W_OFFSET_1 3 // 1  // Scroll steps per scroll action (KC_ACL1)  //
+#define MK_W_OFFSET_2 20 // 1  // Scroll steps per scroll action (KC_ACL2)  //
+
+#define MK_W_INTERVAL_UNMOD 16 // 40  // Time between scroll steps (unmodified)  //
+#define MK_W_INTERVAL_0 16// 360  // Time between scroll steps (KC_ACL0)  //
+#define MK_W_INTERVAL_1 16 // 120  // Time between scroll steps (KC_ACL1)  //
+#define MK_W_INTERVAL_2  16 // 20  // Time between scroll steps (KC_ACL2)
 
 
 // #define MK_KINETIC_SPEED // 未定義 // キネティックモードを有効にする
