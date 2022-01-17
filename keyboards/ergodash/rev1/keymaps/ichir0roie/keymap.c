@@ -17,20 +17,18 @@ enum custom_keycodes {
 bool process_record_user(uint16_t keycode, keyrecord_t *record) {
     switch (keycode) {
         case QMKBEST:if (record->event.pressed) SEND_STRING("QMK is the best thing ever!");break;
-        case Custom1:if (record->event.pressed) SEND_STRING("ssa");break;
-        case Custom2:if (record->event.pressed) SEND_STRING("ssb");break;
-        case Custom3:if (record->event.pressed) SEND_STRING("ssc");break;
-        case Custom4:if (record->event.pressed) SEND_STRING("ssd");break;
-        case Custom5:if (record->event.pressed) SEND_STRING("sse");break;
-        case Custom6:if (record->event.pressed) SEND_STRING("ssf");break;
-        case Custom7:if (record->event.pressed) SEND_STRING("ssg");break;
-        case Custom8:if (record->event.pressed) SEND_STRING("ssh");break;
+        case Custom1:if (record->event.pressed) SEND_STRING("");break;
+        case Custom2:if (record->event.pressed) SEND_STRING("");break;
+        case Custom3:if (record->event.pressed) SEND_STRING("");break;
+        case Custom4:if (record->event.pressed) SEND_STRING("");break;
+        case Custom5:if (record->event.pressed) SEND_STRING("");break;
+        case Custom6:if (record->event.pressed) SEND_STRING("");break;
+        case Custom7:if (record->event.pressed) SEND_STRING("");break;
+        case Custom8:if (record->event.pressed) SEND_STRING("");break;
         // case :if (record->event.pressed) SEND_STRING("");break;
     }
     return true;
 };
-
-
 const key_override_t to0 = ko_make_basic(MOD_MASK_SHIFT, JP_ASTR, JP_TILD );
 const key_override_t to1 = ko_make_basic(MOD_MASK_SHIFT, JP_PLUS, JP_DLR );
 const key_override_t to2 = ko_make_basic(MOD_MASK_SHIFT, JP_MINS, JP_PERC );
