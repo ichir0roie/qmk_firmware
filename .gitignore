@@ -1,3 +1,4 @@
+
 # Junk files
 *.bak
 *.swp
@@ -91,3 +92,5 @@ user_song_list.h
 compile_commands.json
 .clangd/
 .cache/
+lib/lufa
+lib/lufaBK/
