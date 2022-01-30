@@ -58,8 +58,8 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 #define MK_C_OFFSET_UNMOD 2 // 16  // Cursor offset per movement (unmodified)  //
 #define MK_C_OFFSET_0 1 // 1  // Cursor offset per movement (KC_ACL0)  //
-#define MK_C_OFFSET_1 15 // 4  // Cursor offset per movement (KC_ACL1)  //
-#define MK_C_OFFSET_2 30 // 32  // Cursor offset per movement (KC_ACL2)  //
+#define MK_C_OFFSET_1 10 // 4  // Cursor offset per movement (KC_ACL1)  //
+#define MK_C_OFFSET_2 50 // 32  // Cursor offset per movement (KC_ACL2)  //
 
 #define MK_C_INTERVAL_UNMOD 16 // 16  // Time between cursor movements (unmodified)  //
 #define MK_C_INTERVAL_0 16 // 32  // Time between cursor movements (KC_ACL0)  //
