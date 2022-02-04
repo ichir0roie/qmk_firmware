@@ -35,3 +35,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         KC_NO,KC_TRNS,LGUI(KC_TAB),KC_NO,LGUI(LCTL(KC_LEFT)),LGUI(LCTL(KC_RGHT))
     ),
 };
+
+
+
+
+
