@@ -22,15 +22,15 @@
         //leftUp,leftDown,1,2,3,right
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
-    // [0] = LAYOUT( /* Base */
-        //KC_BTN4, DPI_CONFIG, KC_BTN1, KC_BTN1, KC_BTN1, KC_BTN5
-    // ),
     [0] = LAYOUT(
-        MO(1),LGUI(KC_TAB),KC_BTN1,DRAG_SCROLL,KC_BTN2,KC_RCTL
+        MO(1),DRAG_SCROLL,KC_BTN1,MO(2),KC_BTN2,KC_RCTL
     ),
     [1] = LAYOUT(
-        KC_TRNS,DPI_CONFIG,KC_DEL,KC_BTN3,KC_BSPC,KC_ENTER
-    )
+        KC_TRNS,DPI_CONFIG,KC_DEL,KC_NO,KC_BSPC,KC_ENT
+    ),
+    [2] = LAYOUT(
+        KC_LGUI,KC_BTN3,LGUI(LCTL(KC_LEFT)),KC_TRNS,LGUI(LCTL(KC_RGHT)),LGUI(KC_TAB)
+    ),
 };
 
 
