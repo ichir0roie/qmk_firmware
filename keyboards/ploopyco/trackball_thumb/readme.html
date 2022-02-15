@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>readme.md</title>
+<meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+
+<style>
+/* https://github.com/microsoft/vscode/blob/master/extensions/markdown-language-features/media/markdown.css */
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+body {
+	font-family: var(--vscode-markdown-font-family, -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif);
+	font-size: var(--vscode-markdown-font-size, 14px);
+	padding: 0 26px;
+	line-height: var(--vscode-markdown-line-height, 22px);
+	word-wrap: break-word;
+}
+
+#code-csp-warning {
+	position: fixed;
+	top: 0;
+	right: 0;
+	color: white;
+	margin: 16px;
+	text-align: center;
+	font-size: 12px;
+	font-family: sans-serif;
+	background-color:#444444;
+	cursor: pointer;
+	padding: 6px;
+	box-shadow: 1px 1px 1px rgba(0,0,0,.25);
+}
+
+#code-csp-warning:hover {
+	text-decoration: none;
+	background-color:#007acc;
+	box-shadow: 2px 2px 2px rgba(0,0,0,.25);
+}
+
+body.scrollBeyondLastLine {
+	margin-bottom: calc(100vh - 22px);
+}
+
+body.showEditorSelection .code-line {
+	position: relative;
+}
+
+body.showEditorSelection .code-active-line:before,
+body.showEditorSelection .code-line:hover:before {
+	content: "";
+	display: block;
+	position: absolute;
+	top: 0;
+	left: -12px;
+	height: 100%;
+}
+
+body.showEditorSelection li.code-active-line:before,
+body.showEditorSelection li.code-line:hover:before {
+	left: -30px;
+}
+
+.vscode-light.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.15);
+}
+
+.vscode-light.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.40);
+}
+
+.vscode-light.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-dark.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.4);
+}
+
+.vscode-dark.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.60);
+}
+
+.vscode-dark.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-high-contrast.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 160, 0, 0.7);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 160, 0, 1);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+img {
+	max-width: 100%;
+	max-height: 100%;
+}
+
+a {
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+a:focus,
+input:focus,
+select:focus,
+textarea:focus {
+	outline: 1px solid -webkit-focus-ring-color;
+	outline-offset: -1px;
+}
+
+hr {
+	border: 0;
+	height: 2px;
+	border-bottom: 2px solid;
+}
+
+h1 {
+	padding-bottom: 0.3em;
+	line-height: 1.2;
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+}
+
+h1, h2, h3 {
+	font-weight: normal;
+}
+
+table {
+	border-collapse: collapse;
+}
+
+table > thead > tr > th {
+	text-align: left;
+	border-bottom: 1px solid;
+}
+
+table > thead > tr > th,
+table > thead > tr > td,
+table > tbody > tr > th,
+table > tbody > tr > td {
+	padding: 5px 10px;
+}
+
+table > tbody > tr + tr > td {
+	border-top: 1px solid;
+}
+
+blockquote {
+	margin: 0 7px 0 5px;
+	padding: 0 16px 0 10px;
+	border-left-width: 5px;
+	border-left-style: solid;
+}
+
+code {
+	font-family: Menlo, Monaco, Consolas, "Droid Sans Mono", "Courier New", monospace, "Droid Sans Fallback";
+	font-size: 1em;
+	line-height: 1.357em;
+}
+
+body.wordWrap pre {
+	white-space: pre-wrap;
+}
+
+pre:not(.hljs),
+pre.hljs code > div {
+	padding: 16px;
+	border-radius: 3px;
+	overflow: auto;
+}
+
+pre code {
+	color: var(--vscode-editor-foreground);
+	tab-size: 4;
+}
+
+/** Theming */
+
+.vscode-light pre {
+	background-color: rgba(220, 220, 220, 0.4);
+}
+
+.vscode-dark pre {
+	background-color: rgba(10, 10, 10, 0.4);
+}
+
+.vscode-high-contrast pre {
+	background-color: rgb(0, 0, 0);
+}
+
+.vscode-high-contrast h1 {
+	border-color: rgb(0, 0, 0);
+}
+
+.vscode-light table > thead > tr > th {
+	border-color: rgba(0, 0, 0, 0.69);
+}
+
+.vscode-dark table > thead > tr > th {
+	border-color: rgba(255, 255, 255, 0.69);
+}
+
+.vscode-light h1,
+.vscode-light hr,
+.vscode-light table > tbody > tr + tr > td {
+	border-color: rgba(0, 0, 0, 0.18);
+}
+
+.vscode-dark h1,
+.vscode-dark hr,
+.vscode-dark table > tbody > tr + tr > td {
+	border-color: rgba(255, 255, 255, 0.18);
+}
+
+</style>
+
+<style>
+/* Tomorrow Theme */
+/* http://jmblog.github.com/color-themes-for-google-code-highlightjs */
+/* Original theme - https://github.com/chriskempson/tomorrow-theme */
+
+/* Tomorrow Comment */
+.hljs-comment,
+.hljs-quote {
+	color: #8e908c;
+}
+
+/* Tomorrow Red */
+.hljs-variable,
+.hljs-template-variable,
+.hljs-tag,
+.hljs-name,
+.hljs-selector-id,
+.hljs-selector-class,
+.hljs-regexp,
+.hljs-deletion {
+	color: #c82829;
+}
+
+/* Tomorrow Orange */
+.hljs-number,
+.hljs-built_in,
+.hljs-builtin-name,
+.hljs-literal,
+.hljs-type,
+.hljs-params,
+.hljs-meta,
+.hljs-link {
+	color: #f5871f;
+}
+
+/* Tomorrow Yellow */
+.hljs-attribute {
+	color: #eab700;
+}
+
+/* Tomorrow Green */
+.hljs-string,
+.hljs-symbol,
+.hljs-bullet,
+.hljs-addition {
+	color: #718c00;
+}
+
+/* Tomorrow Blue */
+.hljs-title,
+.hljs-section {
+	color: #4271ae;
+}
+
+/* Tomorrow Purple */
+.hljs-keyword,
+.hljs-selector-tag {
+	color: #8959a8;
+}
+
+.hljs {
+	display: block;
+	overflow-x: auto;
+	color: #4d4d4c;
+	padding: 0.5em;
+}
+
+.hljs-emphasis {
+	font-style: italic;
+}
+
+.hljs-strong {
+	font-weight: bold;
+}
+</style>
+
+<style>
+/*
+ * Markdown PDF CSS
+ */
+
+ body {
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif, "Meiryo";
+	padding: 0 12px;
+}
+
+pre {
+	background-color: #f8f8f8;
+	border: 1px solid #cccccc;
+	border-radius: 3px;
+	overflow-x: auto;
+	white-space: pre-wrap;
+	overflow-wrap: break-word;
+}
+
+pre:not(.hljs) {
+	padding: 23px;
+	line-height: 19px;
+}
+
+blockquote {
+	background: rgba(127, 127, 127, 0.1);
+	border-color: rgba(0, 122, 204, 0.5);
+}
+
+.emoji {
+	height: 1.4em;
+}
+
+code {
+	font-size: 14px;
+	line-height: 19px;
+}
+
+/* for inline code */
+:not(pre):not(.hljs) > code {
+	color: #C9AE75; /* Change the old color so it seems less like an error */
+	font-size: inherit;
+}
+
+/* Page Break : use <div class="page"/> to insert page break
+-------------------------------------------------------- */
+.page {
+	page-break-after: always;
+}
+
+</style>
+
+<script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+</head>
+<body>
+  <script>
+    mermaid.initialize({
+      startOnLoad: true,
+      theme: document.body.classList.contains('vscode-dark') || document.body.classList.contains('vscode-high-contrast')
+          ? 'dark'
+          : 'default'
+    });
+  </script>
+<h1 id="ploopyco-thumb-trackball">Ploopyco Thumb Trackball</h1>
+<p>It's a DIY, QMK Powered Trackball...for thumb ballers!</p>
+<ul>
+<li>Keyboard Maintainer: <a href="https://github.com/ploopyco">PloopyCo</a>, <a href="https://github.com/drashna/">Drashna Jael're</a>, <a href="https://github.com/germ/">Germ</a></li>
+<li>Hardware Supported: ATMega32u4 8MHz(3.3v)</li>
+<li>Hardware Availability: <a href="https://ploopy.co">Store</a>, <a href="https://github.com/ploopyco">GitHub</a></li>
+</ul>
+<p>Make example for this keyboard (after setting up your build environment):</p>
+<pre><code>make ploopyco/trackball_thumb/rev1_001:default:flash
+</code></pre>
+<p>To jump to the bootloader, hold down &quot;Button 4&quot; (button closest to the USB port).</p>
+<p>See the <a href="https://docs.qmk.fm/#/getting_started_build_tools">build environment setup</a> and the <a href="https://docs.qmk.fm/#/getting_started_make_guide">make instructions</a> for more information. Brand new to QMK? Start with our <a href="https://docs.qmk.fm/#/newbs">Complete Newbs Guide</a>.</p>
+<h1 id="customizing-your-ploopyco-thumb">Customizing your PloopyCo Thumb</h1>
+<p>While the defaults are designed so that it can be plugged in and used right away, there are a number of things that you may want to change.  Such as adding DPI control, or to use the ball to scroll while holding a button.   To allow for this sort of control, there is a callback for both the scroll wheel and the mouse sensor.</p>
+<p>The default behavior for this is:</p>
+<pre class="hljs"><code><div><span class="hljs-function"><span class="hljs-keyword">report_mouse_t</span> <span class="hljs-title">pointing_device_task_kb</span><span class="hljs-params">(<span class="hljs-keyword">report_mouse_t</span> mouse_report)</span> </span>{
+
+    <span class="hljs-keyword">return</span> mouse_report;
+}
+</div></code></pre>
+<p>This should allow you to more heavily customize the behavior.</p>
+<p>Alternatively, the <code>process_wheel</code> and <code>process_mouse</code> functions can both be replaced too, to allow for even more functionality.</p>
+<p>Additionally, you can change the DPI/CPI or speed of the trackball by calling <code>pmw_set_cpi</code> at any time. Additionally, there is a <code>DPI_CONFIG</code> keycode that will cycle through an array of options for the DPI.  This is set to 1200, 1600, and 2400, but can be changed.  1600 is also set to the default.</p>
+<p>To configure/set your own array, there are two defines to use, <code>PLOOPY_DPI_OPTIONS</code> to set the array, and <code>PLOOPY_DPI_DEFAULT</code>, which is the <code>0</code>-based index into the <code>PLOOPY_DPI_OPTIONS</code> array.</p>
+<pre class="hljs"><code><div><span class="hljs-meta">#<span class="hljs-meta-keyword">define</span> PLOOPY_DPI_OPTIONS { 1200, 1600, 2400 }</span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">define</span> PLOOPY_DPI_DEFAULT 1</span>
+</div></code></pre>
+<p>The <code>PLOOPY_DPI_OPTIONS</code> array sets the values that you want to be able to cycle through, and the order they are in.  The &quot;default&quot; define lets the firmware know which of these options is the default and should be loaded by default.</p>
+<p>When inserted into your keymap, the <code>DPI_CONFIG</code> keycode will cycle through the values in the array each time you hit it.  It stores this value in persistent memory, so it will remember your selection the next time the device powers up.</p>
+<h2 id="drag-scroll">Drag Scroll</h2>
+<p>Drag Scroll is a custom keycode for the Ploopy devices that allow you to hold or tap a button and have the mouse movement translate into scrolling instead.</p>
+<p>Nothing needs to be enabled to use this functionality.  Just add the <code>DRAG_SCROLL</code> to your keymap.</p>
+<h3 id="drag-scroll-configuration">Drag Scroll Configuration</h3>
+<ul>
+<li><code>#define PLOOPY_DRAGSCROLL_MOMENTARY</code> - Makes the key into a momentary key, rather than a toggle.</li>
+<li><code>#define PLOOPY_DRAGSCROLL_MULTIPLIER 0.75</code> - Sets the DPI multiplier to use when drag scroll is enabled.</li>
+<li><code>#define PLOOPY_DRAGSCROLL_FIXED</code> - Normally, when activating Drag Scroll, it uses a fraction of the current DPI. You can define this to use a specific, set DPI rather than a fraction of the current DPI.
+<ul>
+<li><code>#define PLOOPY_DRAGSCROLL_DPI 100</code> - When the fixed DPI option is enabled, this sets the DPI to be used for Drag Scroll.</li>
+</ul>
+</li>
+<li><code>#define PLOOPY_DRAGSCROLL_INVERT</code> - This reverses the direction that the scroll is performed.</li>
+</ul>
+
+</body>
+</html>
