@@ -31,7 +31,7 @@ const key_override_t to9 = ko_make_basic(MOD_MASK_SHIFT, JP_EQL, JP_EXLM );
 const key_override_t to10 = ko_make_basic(MOD_MASK_SHIFT, JP_SCLN, JP_AMPR );
 const key_override_t to11 = ko_make_basic(MOD_MASK_SHIFT, JP_COLN, JP_QUES );
 const key_override_t to12 = ko_make_basic(MOD_MASK_SHIFT, JP_SLSH, JP_PIPE );
-const key_override_t to13 = ko_make_basic(MOD_MASK_SHIFT, JP_BSLS, JP_UNDS );
+// const key_override_t to13 = ko_make_basic(MOD_MASK_SHIFT, JP_BSLS, JP_UNDS );
 
 
 // const key_override_t to = ko_make_basic(MOD_MASK_SHIFT, JP_, JP_ );
@@ -51,7 +51,7 @@ const key_override_t **key_overrides = (const key_override_t *[]){
     &to10,
     &to11,
     &to12,
-    &to13,
+    // &to13,
     // &to,
     NULL  // Null terminate the array of overrides!
 };
