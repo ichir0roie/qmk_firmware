@@ -1,1 +1,5 @@
-# The default keymap for Ploopyco Thumb Trackball
+# custom by ichir0roie
+
+これはリポジトリから適当にコピってきたやつだから、
+最終的には最新版を取り直したほうがいいかもしれない。
+qmk firmwareのメジャーアップデートとかがあれば。
