@@ -23,27 +23,33 @@
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     [0] = LAYOUT(
-        MO(1),DRAG_SCROLL,KC_BTN1,KC_BTN3,KC_BTN2,KC_RCTL
+        MO(1),DRAG_SCROLL,KC_BTN1,KC_NO,KC_BTN2,KC_RCTL
     ),
     [1] = LAYOUT(
         KC_TRNS,KC_BSPC,KC_ESC,KC_BTN3,KC_DEL,KC_ENT
     ),
     [2] = LAYOUT(
-        KC_LGUI,KC_NO,LGUI(KC_TAB),KC_BTN3,LGUI(LCTL(KC_LEFT)),LGUI(LCTL(KC_RGHT))
+        LGUI(KC_LEFT),LGUI(KC_RGHT),LGUI(LCTL(KC_LEFT)),KC_NO,LGUI(LCTL(KC_RGHT)),LGUI(KC_TAB)
+    ),
+    [3] = LAYOUT(
+        LGUI(KC_UP),LGUI(KC_DOWN),KC_ESC,TO(0),LGUI(KC_LEFT),LGUI(KC_RGHT)
     ),
 };
 
 enum combos{
     DPI_FASTER,
     TO_MO2,
+    TO_TO3,
 };
 
-const uint16_t PROGMEM dpiFaster[] = {KC_BTN1, KC_BTN2, COMBO_END};
-const uint16_t PROGMEM toMo2[] = {KC_BTN2, KC_RCTL, COMBO_END};
+const uint16_t PROGMEM dpiFaster[] ={KC_BTN2, KC_RCTL, COMBO_END};
+const uint16_t PROGMEM toMo2[] =  {KC_BTN1, KC_BTN2, COMBO_END};
+const uint16_t PROGMEM toTo3[] =  {KC_BTN1, KC_RCTL, COMBO_END};
 // const uint16_t PROGMEM test_combo2[] = {KC_C, KC_D, COMBO_END};
 combo_t key_combos[COMBO_COUNT] = {
     [DPI_FASTER]=COMBO(dpiFaster, DPI_CONFIG),
     [TO_MO2]=COMBO(toMo2, OSL(2)),
+    [TO_TO3]=COMBO(toTo3,TO(3)),
     // COMBO(test_combo2, LCTL(KC_Z)), // keycodes with modifiers are possible too!
 };
 
