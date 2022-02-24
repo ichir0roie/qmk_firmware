@@ -56,10 +56,10 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #define MK_3_SPEED
 #define MK_MOMENTARY_ACCEL
 
-#define MK_C_OFFSET_UNMOD 8 // 16  // Cursor offset per movement (unmodified)  //
+#define MK_C_OFFSET_UNMOD 32 // 16  // Cursor offset per movement (unmodified)  //
 #define MK_C_OFFSET_0 4 // 1  // Cursor offset per movement (KC_ACL0)  //
-#define MK_C_OFFSET_1 40  // 4  // Cursor offset per movement (KC_ACL1)  //
-#define MK_C_OFFSET_2 80 // 32  // Cursor offset per movement (KC_ACL2)  //
+#define MK_C_OFFSET_1 16  // 4  // Cursor offset per movement (KC_ACL1)  //
+#define MK_C_OFFSET_2 64 // 32  // Cursor offset per movement (KC_ACL2)  //
 
 #define MK_C_INTERVAL_UNMOD 16 // 16  // Time between cursor movements (unmodified)  //
 #define MK_C_INTERVAL_0 16 // 32  // Time between cursor movements (KC_ACL0)  //
