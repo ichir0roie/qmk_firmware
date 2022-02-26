@@ -62,15 +62,15 @@
 /* PMW3360 Settings */
 #define PMW3360_CS_PIN             B0
 
-#define PLOOPY_DPI_OPTIONS { 300, 2100}
+#define PLOOPY_DPI_OPTIONS { 400, 2000}
 #define PLOOPY_DPI_DEFAULT 0
 
 #define PLOOPY_DRAGSCROLL_MOMENTARY
 #define PLOOPY_DRAGSCROLL_FIXED
-#define PLOOPY_DRAGSCROLL_DPI 100
+#define PLOOPY_DRAGSCROLL_DPI 200
 #define PLOOPY_DRAGSCROLL_INVERT
 
-#define COMBO_COUNT 3
+#define COMBO_COUNT 4
 
 #define ONESHOT_TAP_TOGGLE 5  /* Tapping this number of times holds the key until tapped once again. */
 #define ONESHOT_TIMEOUT 5000  /* Time (in ms) before the one shot key is released */
