@@ -61,7 +61,7 @@
       "KC_COMM",
       "KC_DOT",
       "ANY(JP_SLSH)",
-      "KC_NO",
+      "KC_BTN1",
       "KC_LGUI",
       "MO(1)",
       "KC_LALT",
@@ -75,7 +75,7 @@
       "KC_RCTL",
       "KC_RALT",
       "MO(1)",
-      "KC_NO"
+      "KC_BTN2"
     ],
     [
       "KC_PSCR",
