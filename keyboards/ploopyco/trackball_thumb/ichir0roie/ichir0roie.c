@@ -69,7 +69,10 @@ int mouseMemoX      = 0;
 int mouseMemoXC      = 0;
 int mouseMemoY      = 0;
 int mouseMemoYC      = 0;
-int mouseMemoCM      = 1000;
+# ifndef DRAG_SCROLL_BETWEEEN
+    # define DRAG_SCROLL_BETWEEEN 1000
+#endif
+
 
 
 
@@ -138,7 +141,7 @@ report_mouse_t pointing_device_task_kb(report_mouse_t mouse_report) {
 
         mouseMemoY+=mouse_report.y;
         mouseMemoYC+=abs(mouseMemoY);
-        if(mouseMemoYC>mouseMemoCM){
+        if(mouseMemoYC>DRAG_SCROLL_BETWEEEN){
             mouse_report.v = -mouseMemoY/abs(mouseMemoY);
             mouseMemoYC=0;
         }

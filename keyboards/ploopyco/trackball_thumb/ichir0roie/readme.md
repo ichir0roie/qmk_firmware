@@ -1,3 +1,6 @@
-This is the R1.001+ version of the Thumb. Future versions may have other features.
+# ploopy thumb trackball ichir0roie custom.
 
-See the [main readme](../readme.md) for more details. 
+## ドラッグスクロールの仕様変更。
+
++ joypad的な挙動に。
++ めんどくさいので、縦方向は矯正でインバート。
