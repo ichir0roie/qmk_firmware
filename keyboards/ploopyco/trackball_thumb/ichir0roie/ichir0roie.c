@@ -16,7 +16,7 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-#include "trackball_thumb_custom.h"
+#include "ichir0roie.h"
 
 #ifndef OPT_DEBOUNCE
 #    define OPT_DEBOUNCE 5  // (ms) 			Time between scroll events
@@ -64,6 +64,14 @@ uint16_t lastMidClick      = 0;      // Stops scrollwheel from being read if it 
 uint8_t  OptLowPin         = OPT_ENC1;
 bool     debug_encoder     = false;
 bool     is_drag_scroll    = false;
+
+int mouseMemoX      = 0;
+int mouseMemoXC      = 0;
+int mouseMemoY      = 0;
+int mouseMemoYC      = 0;
+int mouseMemoCM      = 1000;
+
+
 
 __attribute__((weak)) bool encoder_update_user(uint8_t index, bool clockwise) { return true; }
 
@@ -126,15 +134,20 @@ __attribute__((weak)) void process_mouse_user(report_mouse_t* mouse_report, int1
 report_mouse_t pointing_device_task_kb(report_mouse_t mouse_report) {
 
     if (is_drag_scroll) {
-        mouse_report.h = mouse_report.x;
-#ifdef PLOOPY_DRAGSCROLL_INVERT
-        // Invert vertical scroll direction
-        mouse_report.v = -mouse_report.y;
-#else
-        mouse_report.v = mouse_report.y;
-#endif
+        mouse_report.h =mouse_report.x;
+
+        mouseMemoY+=mouse_report.y;
+        mouseMemoYC+=abs(mouseMemoY);
+        if(mouseMemoYC>mouseMemoCM){
+            mouse_report.v = -mouseMemoY/abs(mouseMemoY);
+            mouseMemoYC=0;
+        }
+
         mouse_report.x = 0;
         mouse_report.y = 0;
+    }else{
+        mouseMemoX=0;
+        mouseMemoY=0;
     }
 
     return pointing_device_task_user(mouse_report);
@@ -155,18 +168,10 @@ bool process_record_kb(uint16_t keycode, keyrecord_t* record) {
         return false;
     }
 
-    if (keycode == DPI_CONFIG) {
-#ifdef DPI_CONFIG_MOMENTARY
-        pointing_device_set_cpi(dpi_array[1]);
-#else
-    if(record->event.pressed){
+    if (keycode == DPI_CONFIG && record->event.pressed) {
         keyboard_config.dpi_config = (keyboard_config.dpi_config + 1) % DPI_OPTION_SIZE;
         eeconfig_update_kb(keyboard_config.raw);
         pointing_device_set_cpi(dpi_array[keyboard_config.dpi_config]);
-    }
-#endif
-    }else{
-        pointing_device_set_cpi(dpi_array[0]);
     }
 
     if (keycode == DRAG_SCROLL) {
