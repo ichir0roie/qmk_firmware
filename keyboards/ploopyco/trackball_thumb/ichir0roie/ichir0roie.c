@@ -138,7 +138,9 @@ report_mouse_t pointing_device_task_kb(report_mouse_t mouse_report) {
 
     if (is_drag_scroll) {
         mouse_report.h =mouse_report.x;
+        mouse_report.v=-mouse_report.y;
 
+        if(mouseMemoY*mouse_report.y<0)mouseMemoY=0;
         mouseMemoY+=mouse_report.y;
         mouseMemoYC+=abs(mouseMemoY);
         if(mouseMemoYC>DRAG_SCROLL_BETWEEEN){
