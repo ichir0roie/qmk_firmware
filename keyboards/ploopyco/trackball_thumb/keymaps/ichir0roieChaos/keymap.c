@@ -23,39 +23,28 @@
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     [0] = LAYOUT(
-        MO(1),DRAG_SCROLL,KC_BTN1,KC_NO,KC_BTN2,KC_RCTL
+        LGUI(KC_TAB),DRAG_SCROLL,KC_BTN1,TO(1),KC_BTN2,KC_RCTL
     ),
     [1] = LAYOUT(
-        KC_TRNS,KC_BSPC,KC_ESC,KC_BTN3,KC_DEL,KC_ENT
-    ),
-    [2] = LAYOUT(
-        LGUI(KC_LEFT),LGUI(KC_RGHT),LGUI(LCTL(KC_LEFT)),KC_NO,LGUI(LCTL(KC_RGHT)),LGUI(KC_TAB)
-    ),
-    [3] = LAYOUT(
-        LGUI(KC_UP),LGUI(KC_DOWN),KC_ESC,TO(0),LGUI(KC_LEFT),LGUI(KC_RGHT)
-    ),
-    [4] = LAYOUT(
         KC_BTN4,KC_BTN5,KC_BTN1,TO(0),KC_BTN2,KC_BTN3
     ),
 };
 
 enum combos{
-    DPI_FASTER,
-    TO_MO2,
-    TO_TO3,
-    TO_Game,
+    BT12,
+    BT1C,
+    BT2C,
 };
 
-const uint16_t PROGMEM dpiFaster[] ={KC_BTN2, KC_RCTL, COMBO_END};
-const uint16_t PROGMEM toMo2[] =  {KC_BTN1, KC_BTN2, COMBO_END};
-const uint16_t PROGMEM toTo3[] =  {KC_BTN1, KC_RCTL, COMBO_END};
-const uint16_t PROGMEM toGameMode[] =  {KC_BTN1, KC_BTN2,DRAG_SCROLL, COMBO_END};
+const uint16_t PROGMEM Bt1AndBt2[] =  {KC_BTN1, KC_BTN2, COMBO_END};
+const uint16_t PROGMEM Bt1AndCtrl[] =  {KC_BTN1, KC_RCTL, COMBO_END};
+const uint16_t PROGMEM Bt2AndCtrl[] ={KC_BTN2, KC_RCTL, COMBO_END};
 // const uint16_t PROGMEM test_combo2[] = {KC_C, KC_D, COMBO_END};
 combo_t key_combos[COMBO_COUNT] = {
-    [DPI_FASTER]=COMBO(dpiFaster, DPI_CONFIG),
-    [TO_MO2]=COMBO(toMo2, OSL(2)),
-    [TO_TO3]=COMBO(toTo3,TO(3)),
-    [TO_Game]=COMBO(toGameMode,TO(4)),
+    [BT12]=COMBO(Bt1AndBt2,KC_DEL),//TO(3)),
+    [BT1C]=COMBO(Bt1AndCtrl, KC_BSPC),//OSL(2)),
+    [BT2C]=COMBO(Bt2AndCtrl, KC_ENTER),//DPI_CONFIG),
+    // [TO_Game]=COMBO(toGameMode,TO(3)),
     // COMBO(test_combo2, LCTL(KC_Z)), // keycodes with modifiers are possible too!
 };
 
