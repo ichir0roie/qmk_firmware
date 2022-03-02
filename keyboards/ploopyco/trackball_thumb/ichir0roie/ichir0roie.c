@@ -140,13 +140,24 @@ report_mouse_t pointing_device_task_kb(report_mouse_t mouse_report) {
         mouse_report.h =mouse_report.x;
         mouse_report.v=-mouse_report.y;
 
-        if(mouseMemoY*mouse_report.y<0)mouseMemoY=0;
-        mouseMemoY+=mouse_report.y;
-        mouseMemoYC+=abs(mouseMemoY);
-        if(mouseMemoYC>DRAG_SCROLL_BETWEEEN&& mouse_report.y==0){
-            mouse_report.v = -mouseMemoY/abs(mouseMemoY);
-            mouseMemoYC=0;
+
+        if(mouse_report.y==0){
+            mouseMemoYC+=abs(mouseMemoY);
+            if(mouseMemoYC>DRAG_SCROLL_BETWEEEN){
+                mouse_report.v = -mouseMemoY/abs(mouseMemoY);
+                mouseMemoYC=0;
+            }
+        }else{
+            if(mouseMemoY*mouse_report.y<0)mouseMemoY=0;
+            mouseMemoY+=mouse_report.y;
         }
+        // if(mouseMemoY*mouse_report.y<0)mouseMemoY=0;
+        // mouseMemoY+=mouse_report.y;
+        // mouseMemoYC+=abs(mouseMemoY);
+        // if(mouseMemoYC>DRAG_SCROLL_BETWEEEN&& mouse_report.y==0){
+        //     mouse_report.v = -mouseMemoY/abs(mouseMemoY);
+        //     mouseMemoYC=0;
+        // }
 
         mouse_report.x = 0;
         mouse_report.y = 0;
