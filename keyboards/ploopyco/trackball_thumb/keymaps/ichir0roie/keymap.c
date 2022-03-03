@@ -19,34 +19,50 @@
 
 // safe range starts at `PLOOPY_SAFE_RANGE` instead.
 
-        //leftUp,leftDown,1,2,3,right
+// name rule -> 4,5,1,2,Sc,3
+
+# define Bt1 KC_BTN1
+# define Bt2 KC_BTN2
+# define Bt3 KC_RCTL
+# define Bt4 KC_BSPC
+# define Bt5 KC_DEL
+# define BtSc LGUI(KC_TAB)
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     [0] = LAYOUT(
-        LGUI(KC_TAB),DRAG_SCROLL,KC_BTN1,TO(1),KC_BTN2,KC_RCTL
+        Bt4,Bt5,Bt1,BtSc,Bt2,Bt3
     ),
     [1] = LAYOUT(
         KC_BTN4,KC_BTN5,KC_BTN1,TO(0),KC_BTN2,KC_BTN3
     ),
 };
 
+
+// name rule -> bt 4,5,1,2,NO,3
+const uint16_t PROGMEM cmbKeys12[] = {Bt1, Bt2, COMBO_END};
+const uint16_t PROGMEM cmbKeys23[] = {Bt2, Bt3, COMBO_END};
+const uint16_t PROGMEM cmbKeys13[] = {Bt1, Bt2, COMBO_END};
+const uint16_t PROGMEM cmbKeys45[] = {Bt4, Bt5, COMBO_END};
+const uint16_t PROGMEM cmbKeys41[] = {Bt4, Bt1, COMBO_END};
+const uint16_t PROGMEM cmbKeys51[] = {Bt5, Bt1, COMBO_END};
+// const uint16_t PROGMEM test_combo2[] = {KC_C, KC_D, COMBO_END};
+
 enum combos{
-    BT12,
-    BT1C,
-    BT2C,
-    BTD1,
+    CMB12,
+    CMB23,
+    //CMB13,
+    //CMB45,
+    CMB41,
+    CMB51,
 };
 
-const uint16_t PROGMEM Bt1AndBt2[] =  {KC_BTN1, KC_BTN2, COMBO_END};
-const uint16_t PROGMEM Bt1AndCtrl[] =  {KC_BTN1, KC_RCTL, COMBO_END};
-const uint16_t PROGMEM Bt2AndCtrl[] ={KC_BTN2, KC_RCTL, COMBO_END};
-const uint16_t PROGMEM BtDragAndBt1[] ={DRAG_SCROLL, KC_BTN1, COMBO_END};
-// const uint16_t PROGMEM test_combo2[] = {KC_C, KC_D, COMBO_END};
 combo_t key_combos[COMBO_COUNT] = {
-    [BT12]=COMBO(Bt1AndBt2,KC_DEL),//TO(3)),
-    [BT1C]=COMBO(Bt1AndCtrl, KC_BSPC),//OSL(2)),
-    [BT2C]=COMBO(Bt2AndCtrl, KC_ENTER),//DPI_CONFIG),
-    [BTD1]=COMBO(BtDragAndBt1, RESET),
+    [CMB12]=COMBO(cmbKeys12, KC_ENTER),
+    [CMB23]=COMBO(cmbKeys23, DRAG_SCROLL),
+    //[CMB13]=COMBO(cmbKeys13, ),
+    //[CMB45]=COMBO(cmbKeys45, ),
+    [CMB41]=COMBO(cmbKeys41, TO(1)),
+    [CMB51]=COMBO(cmbKeys51, RESET),
     // [TO_Game]=COMBO(toGameMode,TO(3)),
     // COMBO(test_combo2, LCTL(KC_Z)), // keycodes with modifiers are possible too!
 };
