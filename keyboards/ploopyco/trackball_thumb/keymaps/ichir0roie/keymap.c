@@ -28,7 +28,8 @@
 # define Bt5 KC_DEL
 # define BtSc LGUI(KC_TAB)
 
-const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
+const uint16_t PROGMEM keymaps[]
+[MATRIX_ROWS][MATRIX_COLS] = {
     [0] = LAYOUT(
         Bt4,Bt5,Bt1,BtSc,Bt2,Bt3
     ),
@@ -57,8 +58,8 @@ enum combos{
 };
 
 combo_t key_combos[COMBO_COUNT] = {
-    [CMB12]=COMBO(cmbKeys12, KC_ENTER),
-    [CMB23]=COMBO(cmbKeys23, DRAG_SCROLL),
+    [CMB12]=COMBO(cmbKeys12, DRAG_SCROLL),
+    [CMB23]=COMBO(cmbKeys23, KC_ENTER),
     //[CMB13]=COMBO(cmbKeys13, ),
     //[CMB45]=COMBO(cmbKeys45, ),
     [CMB41]=COMBO(cmbKeys41, TO(1)),
