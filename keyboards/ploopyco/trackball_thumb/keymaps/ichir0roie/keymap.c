@@ -42,7 +42,7 @@ const uint16_t PROGMEM keymaps[]
 // name rule -> bt 4,5,1,2,NO,3
 const uint16_t PROGMEM cmbKeys12[] = {Bt1, Bt2, COMBO_END};
 const uint16_t PROGMEM cmbKeys23[] = {Bt2, Bt3, COMBO_END};
-const uint16_t PROGMEM cmbKeys13[] = {Bt1, Bt2, COMBO_END};
+const uint16_t PROGMEM cmbKeys13[] = {Bt1, Bt3, COMBO_END};
 const uint16_t PROGMEM cmbKeys45[] = {Bt4, Bt5, COMBO_END};
 const uint16_t PROGMEM cmbKeys41[] = {Bt4, Bt1, COMBO_END};
 const uint16_t PROGMEM cmbKeys51[] = {Bt5, Bt1, COMBO_END};
