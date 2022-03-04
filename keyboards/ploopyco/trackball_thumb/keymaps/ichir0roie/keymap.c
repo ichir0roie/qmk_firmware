@@ -24,7 +24,7 @@
 # define Bt1 KC_BTN1
 # define Bt2 KC_BTN2
 # define Bt3 KC_RCTL
-# define Bt4 KC_BSPC
+# define Bt4 KC_ENTER
 # define Bt5 KC_DEL
 # define BtSc LGUI(KC_TAB)
 
@@ -46,24 +46,28 @@ const uint16_t PROGMEM cmbKeys13[] = {Bt1, Bt2, COMBO_END};
 const uint16_t PROGMEM cmbKeys45[] = {Bt4, Bt5, COMBO_END};
 const uint16_t PROGMEM cmbKeys41[] = {Bt4, Bt1, COMBO_END};
 const uint16_t PROGMEM cmbKeys51[] = {Bt5, Bt1, COMBO_END};
+const uint16_t PROGMEM cmbKeys52[] = {Bt5, Bt2, COMBO_END};
 // const uint16_t PROGMEM test_combo2[] = {KC_C, KC_D, COMBO_END};
 
 enum combos{
     CMB12,
     CMB23,
     //CMB13,
-    //CMB45,
+    // CMB45,
     CMB41,
     CMB51,
+    CMB52,
 };
+
 
 combo_t key_combos[COMBO_COUNT] = {
     [CMB12]=COMBO(cmbKeys12, DRAG_SCROLL),
-    [CMB23]=COMBO(cmbKeys23, KC_ENTER),
+    [CMB23]=COMBO(cmbKeys23, DPI_CONFIG),
     //[CMB13]=COMBO(cmbKeys13, ),
-    //[CMB45]=COMBO(cmbKeys45, ),
+    // [CMB45]=COMBO(cmbKeys45, KC_BSPC),
     [CMB41]=COMBO(cmbKeys41, TO(1)),
     [CMB51]=COMBO(cmbKeys51, RESET),
+    [CMB52]=COMBO(cmbKeys52, KC_BSPC),
     // [TO_Game]=COMBO(toGameMode,TO(3)),
     // COMBO(test_combo2, LCTL(KC_Z)), // keycodes with modifiers are possible too!
 };
