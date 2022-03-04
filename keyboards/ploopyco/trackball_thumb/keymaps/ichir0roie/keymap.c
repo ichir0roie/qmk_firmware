@@ -52,22 +52,22 @@ const uint16_t PROGMEM cmbKeys52[] = {Bt5, Bt2, COMBO_END};
 enum combos{
     CMB12,
     CMB23,
-    //CMB13,
+    CMB13,
     // CMB45,
     CMB41,
     CMB51,
-    CMB52,
+    // CMB52,
 };
 
 
 combo_t key_combos[COMBO_COUNT] = {
     [CMB12]=COMBO(cmbKeys12, DRAG_SCROLL),
-    [CMB23]=COMBO(cmbKeys23, DPI_CONFIG),
-    //[CMB13]=COMBO(cmbKeys13, ),
+    [CMB23]=COMBO(cmbKeys23, KC_BSPC),
+    [CMB13]=COMBO(cmbKeys13, DPI_CONFIG),
     // [CMB45]=COMBO(cmbKeys45, KC_BSPC),
     [CMB41]=COMBO(cmbKeys41, TO(1)),
     [CMB51]=COMBO(cmbKeys51, RESET),
-    [CMB52]=COMBO(cmbKeys52, KC_BSPC),
+    // [CMB52]=COMBO(cmbKeys52, KC_BSPC),
     // [TO_Game]=COMBO(toGameMode,TO(3)),
     // COMBO(test_combo2, LCTL(KC_Z)), // keycodes with modifiers are possible too!
 };
