@@ -16,7 +16,7 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-#include "ichir0roie.h"
+#include "dragKeep.h"
 
 #ifndef OPT_DEBOUNCE
 #    define OPT_DEBOUNCE 5  // (ms) 			Time between scroll events
@@ -65,10 +65,9 @@ uint8_t  OptLowPin         = OPT_ENC1;
 bool     debug_encoder     = false;
 bool     is_drag_scroll    = false;
 
-int mouseMemoX      = 0;
-int mouseMemoXC      = 0;
 int mouseMemoY      = 0;
 int mouseMemoYC      = 0;
+bool keepDragScroll=false;
 # ifndef DRAG_SCROLL_BETWEEEN
     # define DRAG_SCROLL_BETWEEEN 1000
 #endif
@@ -140,24 +139,26 @@ report_mouse_t pointing_device_task_kb(report_mouse_t mouse_report) {
         mouse_report.h =mouse_report.x;
         mouse_report.v=-mouse_report.y;
 
-        if(mouse_report.y==0){
-            mouseMemoYC+=abs(mouseMemoY);
-            if(mouseMemoYC>DRAG_SCROLL_BETWEEEN){
-                mouse_report.v = -mouseMemoY/abs(mouseMemoY);
-                mouseMemoYC=0;
-            }
-        }else{
-            if(mouseMemoY*mouse_report.y<0){
-                mouseMemoY=0;
+        if(keepDragScroll){
+            if(mouse_report.y==0){
+                mouseMemoYC+=abs(mouseMemoY);
+                if(mouseMemoYC>DRAG_SCROLL_BETWEEEN){
+                    mouse_report.v = -mouseMemoY/abs(mouseMemoY);
+                    mouseMemoYC=0;
+                }
             }else{
-                mouseMemoY+=mouse_report.y;
+                if(mouseMemoY*mouse_report.y<0){
+                    mouseMemoY=0;
+                    keepDragScroll=false;
+                }else{
+                    mouseMemoY+=mouse_report.y;
+                }
             }
         }
 
         mouse_report.x = 0;
         mouse_report.y = 0;
     }else{
-        mouseMemoX=0;
         mouseMemoY=0;
     }
 
@@ -192,6 +193,7 @@ bool process_record_kb(uint16_t keycode, keyrecord_t* record) {
         {
             is_drag_scroll ^= 1;
         }
+        keepDragScroll=true;
 #ifdef PLOOPY_DRAGSCROLL_FIXED
         pointing_device_set_cpi(is_drag_scroll ? PLOOPY_DRAGSCROLL_DPI : dpi_array[keyboard_config.dpi_config]);
 #else
