@@ -76,3 +76,5 @@
 
 
 #define COMBO_COUNT 5
+
+#define CONSOLE_ENABLE=yes

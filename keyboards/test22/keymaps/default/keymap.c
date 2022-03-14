@@ -5,21 +5,40 @@
 
 #include "joystick.h"
 #include "analog.h"
-
+#include "print.h"
 
 // Defines names for use in layer keycodes and the keymap
 enum layer_names {
     _BASE=0,
 };
 
+
+enum custom_key{
+    ModeCursor,
+    ModeMouse=SAFE_RANGE,
+};
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     /* Base */
-    [_BASE] = LAYOUT(
-        KC_A,KC_B,KC_C,
-        KC_D,KC_E,KC_F,
-        KC_G,KC_H,KC_I
-    )
+    [_BASE] = LAYOUT(ModeCursor,ModeMouse,RESET,DEBUG)
 };
+
+bool modeCursor=false;
+bool modeMouse=false;
+bool released=false;
+
+bool process_record_user(uint16_t keycode, keyrecord_t *record) {
+    switch(keycode){
+        case ModeCursor:
+            modeCursor=record->event.pressed;
+            break;
+        case ModeMouse:
+            modeMouse= record->event.pressed;
+            break;
+    }
+
+    return true;
+}
+
 # define maxAxis 1025
 //joystick config
 joystick_config_t joystick_axes[JOYSTICK_AXES_COUNT] = {
@@ -27,40 +46,82 @@ joystick_config_t joystick_axes[JOYSTICK_AXES_COUNT] = {
     [1] = JOYSTICK_AXIS_IN(F5, 0, maxAxis/2,maxAxis),
 };
 
-
-
-bool process_record_user(uint16_t keycode, keyrecord_t *record) {
-
-    return true;
-}
-
 int sensorX =0;
 int sensorY =0;
+
+int kcMaps[2][4]={
+    {
+        KC_LEFT,
+        KC_RIGHT,
+        KC_UP,
+        KC_DOWN
+    },
+    {
+        KC_MS_L,
+        KC_MS_R,
+        KC_MS_U,
+        KC_MS_D
+    }};
+int regKey=-1;
+int regMode=-1;
+bool sended=false;
+#define countMAX 100
+int tempSensor=0;
+
+#define analogBuffer 4
+
 void matrix_scan_user(){
+    if(modeCursor||modeMouse){
 
+        // TODO: disable joystick .
 
-    sensorX=analogReadPin(F4);
-    sensorY=analogReadPin(F5);
-
-    if(sensorX<maxAxis/2-30){
-        register_code(KC_MS_R);
-        unregister_code(KC_MS_L);
-    }else if(sensorX>maxAxis/2+30){
-        register_code(KC_MS_L);
-        unregister_code(KC_MS_R);
+        tempSensor=(analogReadPin(F4)+analogBuffer)/10-50;
+        uprintf("%d\n",tempSensor);
+        if(abs(tempSensor)>1){
+            sensorX+=tempSensor;
+        }
+        tempSensor=(analogReadPin(F5)+analogBuffer)/10-50;
+        if(abs(tempSensor)>1){
+            sensorY+=tempSensor;
+        }
     }else{
-        unregister_code(KC_MS_L);
-        unregister_code(KC_MS_R);
+        sensorX=countMAX;
+        sensorY=countMAX;
     }
-    if(sensorY<maxAxis/2-30){
-        register_code(KC_MS_U);
-        unregister_code(KC_MS_D);
-    }else if(sensorY>maxAxis/2+30){
-        register_code(KC_MS_D);
+    if(sended){
+        unregister_code(KC_LEFT);
+        unregister_code(KC_RIGHT);
+        unregister_code(KC_UP);
+        unregister_code(KC_DOWN);
+        unregister_code(KC_MS_L);
+        unregister_code(KC_MS_R);
         unregister_code(KC_MS_U);
+        unregister_code(KC_MS_D);
+        sended=false;
+    }
+    if(modeCursor){
+        regMode=0;
+    }else if(modeMouse){
+        regMode=1;
     }else{
-        unregister_code(KC_MS_U);
-        unregister_code(KC_MS_D);
+        regMode=-1;
+    }
+    if(sensorX<-countMAX)regKey=1;
+    if(sensorX> countMAX)regKey=0;
+    if(regMode>=0&&regKey>=0){
+        register_code(kcMaps[regMode][regKey]);
+        sended=true;
+        sensorX=0;
+        regKey=-1;
+    }
+    if(sensorY<-countMAX)regKey=2;
+    if(sensorY> countMAX)regKey=3;
+    if(regMode>=0&&regKey>=0){
+        register_code(kcMaps[regMode][regKey]);
+        sended=true;
+        sensorY=0;
+        regKey=-1;
     }
 
 }
+
