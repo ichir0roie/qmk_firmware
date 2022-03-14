@@ -24,9 +24,9 @@
 # define Bt1 KC_BTN1
 # define Bt2 KC_BTN2
 # define Bt3 KC_RCTL
-# define Bt4 LGUI(KC_TAB)
-# define Bt5 DRAG_SCROLL
-# define BtSc DPI_CONFIG
+# define Bt4 KC_ENTER
+# define Bt5 KC_DEL
+# define BtSc LGUI(KC_TAB)
 
 const uint16_t PROGMEM keymaps[]
 [MATRIX_ROWS][MATRIX_COLS] = {
@@ -61,9 +61,9 @@ enum combos{
 
 
 combo_t key_combos[COMBO_COUNT] = {
-    [CMB12]=COMBO(cmbKeys12, KC_ENTER),
-    [CMB23]=COMBO(cmbKeys23, KC_DEL),
-    [CMB13]=COMBO(cmbKeys13, KC_BSPC),
+    [CMB12]=COMBO(cmbKeys12, DRAG_SCROLL),
+    [CMB23]=COMBO(cmbKeys23, KC_BSPC),
+    [CMB13]=COMBO(cmbKeys13, DPI_CONFIG),
     // [CMB45]=COMBO(cmbKeys45, KC_BSPC),
     [CMB41]=COMBO(cmbKeys41, TO(1)),
     [CMB51]=COMBO(cmbKeys51, RESET),
