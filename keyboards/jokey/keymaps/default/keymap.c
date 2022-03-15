@@ -4,7 +4,6 @@
 #include QMK_KEYBOARD_H
 
 #include "joystick.h"
-#include "analog.h"
 #include "print.h"
 
 // Defines names for use in layer keycodes and the keymap
@@ -12,11 +11,8 @@ enum layer_names {
     _BASE=0,
 };
 
+enum custom_key{ModeCursor,ModeMouse=SAFE_RANGE};
 
-enum custom_key{
-    ModeCursor,
-    ModeMouse=SAFE_RANGE,
-};
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     /* Base */
     [_BASE] = LAYOUT(ModeCursor,ModeMouse,RESET,DEBUG)
@@ -39,11 +35,12 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
     return true;
 }
 
-# define maxAxis 1025
+# define maxAxis 1023
+#define limitAxis 100
 //joystick config
 joystick_config_t joystick_axes[JOYSTICK_AXES_COUNT] = {
-    [0] = JOYSTICK_AXIS_IN(F4, maxAxis, maxAxis/2,0),
-    [1] = JOYSTICK_AXIS_IN(F5, 0, maxAxis/2,maxAxis),
+    [0] = JOYSTICK_AXIS_IN(F4, maxAxis-limitAxis, maxAxis/2,0),
+    [1] = JOYSTICK_AXIS_IN(F5, 0, maxAxis/2,maxAxis-limitAxis),
 };
 
 int sensorX =0;
@@ -65,28 +62,32 @@ int kcMaps[2][4]={
 int regKey=-1;
 int regMode=-1;
 bool sended=false;
-#define countMAX 100
-int tempSensor=0;
+#define countMAX 10000
+#define offSet 10
 
-#define analogBuffer 4
+int tempAxesX=0;
+int tempAxesY=0;
 
 void matrix_scan_user(){
     if(modeCursor||modeMouse){
 
-        // TODO: disable joystick .
+        tempAxesX=joystick_status.axes[0]*abs(joystick_status.axes[0])/30;
+        tempAxesY=joystick_status.axes[1]*abs(joystick_status.axes[1])/30;
 
-        tempSensor=(analogReadPin(F4)+analogBuffer)/10-50;
-        uprintf("%d\n",tempSensor);
-        if(abs(tempSensor)>1){
-            sensorX+=tempSensor;
+        if(abs(tempAxesX)>offSet){
+            sensorX+=abs(tempAxesX);
+        }else{
+            sensorX=countMAX;
         }
-        tempSensor=(analogReadPin(F5)+analogBuffer)/10-50;
-        if(abs(tempSensor)>1){
-            sensorY+=tempSensor;
+        if(abs(tempAxesY)>offSet){
+            sensorY+=abs(tempAxesY);
+        }else{
+            sensorY=countMAX;
         }
-    }else{
-        sensorX=countMAX;
-        sensorY=countMAX;
+        // joystick_status.axes[0]=0;
+        // joystick_status.axes[1]=0;
+        // joystick_status.status |= JS_UPDATED;
+        uprintf("x=%d\t\t:y=%d\n",tempAxesX,tempAxesY);
     }
     if(sended){
         unregister_code(KC_LEFT);
@@ -106,21 +107,25 @@ void matrix_scan_user(){
     }else{
         regMode=-1;
     }
-    if(sensorX<-countMAX)regKey=1;
-    if(sensorX> countMAX)regKey=0;
-    if(regMode>=0&&regKey>=0){
-        register_code(kcMaps[regMode][regKey]);
-        sended=true;
-        sensorX=0;
-        regKey=-1;
+    if(sensorX>countMAX){
+        if(tempAxesX<-offSet)regKey=0;
+        if(tempAxesX> offSet)regKey=1;
+        if(regMode>=0&&regKey>=0){
+            register_code(kcMaps[regMode][regKey]);
+            sended=true;
+            sensorX=0;
+            regKey=-1;
+        }
     }
-    if(sensorY<-countMAX)regKey=2;
-    if(sensorY> countMAX)regKey=3;
-    if(regMode>=0&&regKey>=0){
-        register_code(kcMaps[regMode][regKey]);
-        sended=true;
-        sensorY=0;
-        regKey=-1;
+    if(sensorY>countMAX){
+        if(tempAxesY<-offSet)regKey=2;
+        if(tempAxesY> offSet)regKey=3;
+        if(regMode>=0&&regKey>=0){
+            register_code(kcMaps[regMode][regKey]);
+            sended=true;
+            sensorY=0;
+            regKey=-1;
+        }
     }
 
 }
