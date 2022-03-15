@@ -91,3 +91,5 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 // #define mousekey_WHEEL_BASE_MOVEMENTS 32 // 32 // 加速が停止する最大移動回数
 // #define mousekey_WHEEL_ACCELERATED_MOVEMENTS 48 // 48 // 加速されたホイールの動き
 // #define mousekey_WHEEL_DECELERATED_MOVEMENTS 8 // 8 // 減速されたホイールの動き
+
+#define TAPPING_FORCE_HOLD
