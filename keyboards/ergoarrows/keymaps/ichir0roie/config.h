@@ -33,11 +33,9 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 // #define EE_HANDS
 
 #undef TAPPING_TERM
-#define TAPPING_TERM 200
-#define TAPPING_TOGGLE 2
-
-
-
+#define TAPPING_TERM 150
+#define TAPPING_TOGGLE 3
+// #define TAPPING_FORCE_HOLD
 
 // #define MK_COMBINED
 
@@ -92,4 +90,3 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 // #define mousekey_WHEEL_ACCELERATED_MOVEMENTS 48 // 48 // 加速されたホイールの動き
 // #define mousekey_WHEEL_DECELERATED_MOVEMENTS 8 // 8 // 減速されたホイールの動き
 
-#define TAPPING_FORCE_HOLD
