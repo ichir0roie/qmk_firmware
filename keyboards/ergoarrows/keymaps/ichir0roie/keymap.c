@@ -58,4 +58,3 @@ const key_override_t **key_overrides = (const key_override_t *[]){
 
 #include <keymapAG.c>
 
-bool release=false;
