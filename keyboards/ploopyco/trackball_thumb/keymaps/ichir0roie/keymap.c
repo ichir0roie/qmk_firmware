@@ -22,10 +22,10 @@
 // name rule -> 4,5,1,2,Sc,3
 
 # define Bt1 KC_BTN1
-# define Bt2 LCTL_T(KC_BTN2)
-# define Bt3 LT(2,KC_ENTER)
+# define Bt2 KC_BTN2
+# define Bt3 LCTL_T(KC_ENTER)
 # define Bt4 DRAG_SCROLL
-# define Bt5 LGUI(KC_TAB)
+# define Bt5 KC_DEL
 # define BtSc DPI_CONFIG
 
 const uint16_t PROGMEM keymaps[]
@@ -36,9 +36,6 @@ const uint16_t PROGMEM keymaps[]
     [1] = LAYOUT(
         KC_BTN4,KC_BTN5,KC_BTN1,TO(0),KC_BTN2,KC_BTN3
     ),
-    [2] = LAYOUT(
-        KC_ESC,KC_INS,KC_BSPC,KC_NO,KC_DEL,KC_NO
-    )
 };
 
 
@@ -53,8 +50,8 @@ const uint16_t PROGMEM cmbKeys52[] = {Bt5, Bt2, COMBO_END};
 // const uint16_t PROGMEM test_combo2[] = {KC_C, KC_D, COMBO_END};
 
 enum combos{
-    // CMB12,
-    // CMB23,
+    CMB12,
+    CMB23,
     // CMB13,
     // CMB45,
     CMB41,
@@ -64,8 +61,8 @@ enum combos{
 
 
 combo_t key_combos[COMBO_COUNT] = {
-    // [CMB12]=COMBO(cmbKeys12, KC_ENTER),
-    // [CMB23]=COMBO(cmbKeys23, KC_RCTL),
+    [CMB12]=COMBO(cmbKeys12, LGUI(KC_TAB)),
+    [CMB23]=COMBO(cmbKeys23, KC_BSPC),
     // [CMB13]=COMBO(cmbKeys13, KC_BSPC),
     // [CMB45]=COMBO(cmbKeys45, KC_BSPC),
     [CMB41]=COMBO(cmbKeys41, TO(1)),
