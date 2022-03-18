@@ -33,10 +33,10 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 // #define EE_HANDS
 
 #undef TAPPING_TERM
-#define TAPPING_TERM 300
-#define TAPPING_TOGGLE 3
+#define TAPPING_TERM 1000
+// #define TAPPING_TOGGLE 3
 #define HOLD_ON_OTHER_KEY_PRESS
-// #define TAPPING_FORCE_HOLD
+#define TAPPING_FORCE_HOLD
 
 // #define MK_COMBINED
 
@@ -50,6 +50,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 // #define MOUSEKEY_WHEEL_INTERVAL 100 // 100 /* Time between wheel movements */
 // #define MOUSEKEY_WHEEL_MAX_SPEED 20 // 8 /* Maximum number of scroll steps per scroll action */
 // #define MOUSEKEY_WHEEL_TIME_TO_MAX 20 // 40 /* Time until maximum scroll speed is reached */
+
 
 
 #define MK_3_SPEED
