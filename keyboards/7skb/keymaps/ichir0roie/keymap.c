@@ -1,20 +1,6 @@
 #include <keymap_jp.h>
 #include <sendstring_jis.h>
 
-
-enum custom_keycodes {
-        QMKBEST = SAFE_RANGE
-    };
-
-
-
-bool process_record_user(uint16_t keycode, keyrecord_t *record) {
-    switch (keycode) {
-        case QMKBEST:if (record->event.pressed) SEND_STRING("QMK is the best thing ever!");break;
-    }
-    return true;
-};
-
 const key_override_t to0 = ko_make_basic(MOD_MASK_SHIFT, JP_ASTR, JP_TILD );
 const key_override_t to1 = ko_make_basic(MOD_MASK_SHIFT, JP_PLUS, JP_DLR );
 const key_override_t to2 = ko_make_basic(MOD_MASK_SHIFT, JP_MINS, JP_PERC );
