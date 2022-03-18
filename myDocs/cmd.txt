@@ -1,0 +1,6 @@
+mv Downloads/ichir0roie_7skb.json qmk_firmware/keyboards/7skb/keymaps/ichir0roie/ichir0roie.json
+
+qmk json2c -o qmk_firmware/keyboards/ergoarrows/keymaps/ichir0roie/keymapAG.c qmk_firmware/keyboards/ergoarrows/keymaps/ichir0roie/ichir0roie.json
+qmk flash -kb ergoarrows -km ichir0roie
+
+mv C:/Users/tihom/Downloads/ichir0roie.json C:/Users/tihom/qmk_firmware/keyboards/ergoarrows/keymaps/ichir0roie/ichir0roie.json;qmk json2c -o C:/Users/tihom/qmk_firmware/keyboards/ergoarrows/keymaps/ichir0roie/keymapAG.c C:/Users/tihom/qmk_firmware/keyboards/ergoarrows/keymaps/ichir0roie/ichir0roie.json;qmk flash -kb ergoarrows -km ichir0roie
