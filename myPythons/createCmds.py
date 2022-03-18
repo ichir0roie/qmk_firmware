@@ -48,7 +48,7 @@ class CreateCmds:
     def initTargetMaps(self):
         self.targetMaps = []
 
-    def addTargetMaps(self, kb: str, km: str):
+    def addTargetMaps(self, kb: str, km: str,jsonFile:str):
         newKeymap = Keymap(kb, km)
         self.targetMaps.append(newKeymap)
 
@@ -80,6 +80,7 @@ class CreateCmds:
         return cmdList
 
     def printKeyMapCmd(self,keymap:Keymap,printSingleCommand:bool=False):
+        # TODO change method
         self.printAndSave("--------{}/{}--------".format(keymap.keyboard,keymap.keymap))
         self.printAndSave()
 
@@ -123,8 +124,8 @@ if __name__ == '__main__':
 
     # cc.getKeyboards()
 
-    cc.addTargetMaps("ergoarrows","ichir0roie")
-    cc.addTargetMaps("ergodash","ichir0roie")
+    cc.addTargetMaps("ergoarrows","ichir0roie","ichir0roie_ergoarrows")
+    cc.addTargetMaps("7skb","ichir0roie","ichir0roie_7skb")
     cc.addTargetMaps("","ichir0roie")
 
     cc.printAllTargets(True)
