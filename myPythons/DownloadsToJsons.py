@@ -11,3 +11,4 @@ outputPath="C://Users/tihom/qmk_firmware/myJsons/"
 for path in files:
     filename=path.split("\\")[-1]
     shutil.copy(path,outputPath+filename)
+    os.remove(path)
