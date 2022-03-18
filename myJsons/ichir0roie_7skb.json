@@ -1,6 +1,7 @@
 {
   "version": 1,
-  "documentation": "This file is a QMK Configurator export. You can import this at <https://config.qmk.fm>. It can also be used directly with QMK's source code.\n\nTo setup your QMK environment check out the tutorial: <https://docs.qmk.fm/#/newbs>\n\nYou can convert this file to a keymap.c using this command: `qmk json2c {keymap}`\n\nYou can compile this keymap using this command: `qmk compile {keymap}`\n",
+  "notes": "",
+  "documentation": "\"This file is a QMK Configurator export. You can import this at <https://config.qmk.fm>. It can also be used directly with QMK's source code.\n\nTo setup your QMK environment check out the tutorial: <https://docs.qmk.fm/#/newbs>\n\nYou can convert this file to a keymap.c using this command: `qmk json2c {keymap}`\n\nYou can compile this keymap using this command: `qmk compile {keymap}`\"\n",
   "keyboard": "salicylic_acid3/7skb/rev1",
   "keymap": "ichir0roie_7skb",
   "layout": "LAYOUT",
@@ -92,7 +93,7 @@
       "KC_P8",
       "KC_P9",
       "ANY(JP_EQL)",
-      "LGUI(KC_TAB)",
+      "KC_BTN1",
       "KC_MS_L",
       "KC_MS_U",
       "KC_MS_D",
@@ -119,7 +120,7 @@
       "KC_P2",
       "KC_P3",
       "ANY(JP_COLN)",
-      "KC_BTN1",
+      "LGUI(KC_TAB)",
       "KC_HOME",
       "KC_PGUP",
       "KC_PGDN",
@@ -201,6 +202,5 @@
       "KC_RALT"
     ]
   ],
-  "author": "",
-  "notes": ""
+  "author": ""
 }
