@@ -2,11 +2,11 @@ import glob
 import os
 import shutil
 
-files=glob.glob("C://Users/tihom/Downloads/*.json")
+files=glob.glob("C://Downloads/*.json")
 
 # print(files)
 
-outputPath="C://Users/tihom/qmk_firmware/myJsons/"
+outputPath="C://QMK/qmk_firmware/myJsons/"
 
 for path in files:
     print("move : "+path)
