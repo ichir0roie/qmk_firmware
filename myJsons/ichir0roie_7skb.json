@@ -1,7 +1,6 @@
 {
   "version": 1,
-  "notes": "",
-  "documentation": "\"This file is a QMK Configurator export. You can import this at <https://config.qmk.fm>. It can also be used directly with QMK's source code.\n\nTo setup your QMK environment check out the tutorial: <https://docs.qmk.fm/#/newbs>\n\nYou can convert this file to a keymap.c using this command: `qmk json2c {keymap}`\n\nYou can compile this keymap using this command: `qmk compile {keymap}`\"\n",
+  "documentation": "This file is a QMK Configurator export. You can import this at <https://config.qmk.fm>. It can also be used directly with QMK's source code.\n\nTo setup your QMK environment check out the tutorial: <https://docs.qmk.fm/#/newbs>\n\nYou can convert this file to a keymap.c using this command: `qmk json2c {keymap}`\n\nYou can compile this keymap using this command: `qmk compile {keymap}`\n",
   "keyboard": "salicylic_acid3/7skb/rev1",
   "keymap": "ichir0roie_7skb",
   "layout": "LAYOUT",
@@ -49,7 +48,7 @@
       "ANY(JP_SCLN)",
       "ANY(JP_COLN)",
       "KC_DEL",
-      "MO(3)",
+      "LT(3,KC_LGUI)",
       "KC_Z",
       "KC_X",
       "KC_C",
@@ -114,7 +113,7 @@
       "KC_RGHT",
       "ANY(LGUI(LCTL(KC_RGHT)))",
       "KC_DEL",
-      "KC_TRNS",
+      "KC_ENT",
       "KC_PDOT",
       "KC_P1",
       "KC_P2",
@@ -179,7 +178,7 @@
       "KC_F8",
       "KC_NO",
       "KC_NO",
-      "KC_TRNS",
+      "KC_LGUI",
       "KC_F1",
       "KC_F2",
       "KC_F3",
@@ -244,7 +243,7 @@
       "KC_NO",
       "KC_NO",
       "KC_NO",
-      "KC_TRNS",
+      "KC_NO",
       "KC_HOME",
       "KC_PGUP",
       "KC_PGDN",
@@ -262,10 +261,11 @@
       "KC_LSFT",
       "KC_LGUI",
       "KC_NO",
-      "KC_NO",
+      "LGUI(KC_ENT)",
       "KC_NO",
       "KC_NO"
     ]
   ],
-  "author": ""
+  "author": "",
+  "notes": ""
 }
