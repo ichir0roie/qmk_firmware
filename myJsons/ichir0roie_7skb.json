@@ -48,7 +48,7 @@
       "ANY(JP_SCLN)",
       "ANY(JP_COLN)",
       "KC_DEL",
-      "KC_APP",
+      "KC_LGUI",
       "KC_Z",
       "KC_X",
       "KC_C",
