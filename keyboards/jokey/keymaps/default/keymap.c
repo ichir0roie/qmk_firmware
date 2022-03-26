@@ -39,8 +39,8 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
 #define limitAxis 100
 //joystick config
 joystick_config_t joystick_axes[JOYSTICK_AXES_COUNT] = {
-    [0] = JOYSTICK_AXIS_IN(F4, maxAxis-limitAxis, maxAxis/2,0),
-    [1] = JOYSTICK_AXIS_IN(F5, 0, maxAxis/2,maxAxis-limitAxis),
+    [0] = JOYSTICK_AXIS_IN(F6, maxAxis-limitAxis, maxAxis/2,0),
+    [1] = JOYSTICK_AXIS_IN(F7, 0, maxAxis/2,maxAxis-limitAxis),
 };
 
 int sensorX =0;
