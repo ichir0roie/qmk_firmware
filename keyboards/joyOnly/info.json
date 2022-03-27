@@ -1,0 +1,16 @@
+{
+    "keyboard_name": "joyOnly",
+    "url": "",
+    "maintainer": "ichir0roieHome",
+    "layouts": {
+        "LAYOUT": {
+            "layout": [
+                {"label": "k00", "x": 0, "y": 0},
+                {"label": "k01", "x": 1, "y": 0},
+
+                {"label": "k02", "x": 0, "y": 1},
+                {"label": "k03", "x": 1, "y": 1}
+            ]
+        }
+    }
+}
