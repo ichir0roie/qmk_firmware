@@ -75,7 +75,7 @@ report_analog_joystick_t analog_joystick_read(void) {
 
     if (timer_elapsed(lastCursor) > ANALOG_JOYSTICK_READ_INTERVAL) {
         lastCursor = timer_read();
-        report.x   = axisToMouseComponent(ANALOG_JOYSTICK_X_AXIS_PIN, xOrigin, maxCursorSpeed);
+        report.x   = -axisToMouseComponent(ANALOG_JOYSTICK_X_AXIS_PIN, xOrigin, maxCursorSpeed);
         report.y   = axisToMouseComponent(ANALOG_JOYSTICK_Y_AXIS_PIN, yOrigin, maxCursorSpeed);
     }
 #ifdef ANALOG_JOYSTICK_CLICK_PIN
