@@ -24,9 +24,9 @@
 # define Bt1 KC_BTN1
 # define Bt2 KC_BTN2
 # define Bt3 LCTL_T(KC_DEL)
-# define Bt4 LT(2,KC_ENTER)
-# define Bt5 DRAG_SCROLL
-# define BtSc TO(1)
+# define Bt4 DRAG_SCROLL
+# define Bt5 LT(2,KC_ENTER)
+# define BtSc KC_BTN3
 
 const uint16_t PROGMEM keymaps[]
 [MATRIX_ROWS][MATRIX_COLS] = {

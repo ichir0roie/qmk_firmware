@@ -21,8 +21,8 @@ AUDIO_ENABLE = no           # Audio output
 JOYSTICK_ENABLE = yes
 JOYSTICK_DRIVER = analog # analog or 'digital'
 
-POINTING_DEVICE_ENABLE = yes
-POINTING_DEVICE_DRIVER = analog_joystick
+# POINTING_DEVICE_ENABLE = yes
+# POINTING_DEVICE_DRIVER = analog_joystick
 
 
 # DEFAULT_FOLDER = test22/keymaps/default
