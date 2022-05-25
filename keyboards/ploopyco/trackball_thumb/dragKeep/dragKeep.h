@@ -19,3 +19,8 @@
 #pragma once
 
 #include "trackball_thumb.h"
+
+
+enum custom_key_dk{
+    CHANGEDRAGKEEP=SAFE_RANGE,
+};

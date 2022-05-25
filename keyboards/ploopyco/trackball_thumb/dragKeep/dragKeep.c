@@ -72,7 +72,7 @@ bool keepDragScroll=false;
     # define DRAG_SCROLL_BETWEEEN 1000
 #endif
 
-
+bool dragFix=true;
 
 
 __attribute__((weak)) bool encoder_update_user(uint8_t index, bool clockwise) { return true; }
@@ -135,7 +135,7 @@ __attribute__((weak)) void process_mouse_user(report_mouse_t* mouse_report, int1
 
 report_mouse_t pointing_device_task_kb(report_mouse_t mouse_report) {
 
-    if (is_drag_scroll) {
+    if (is_drag_scroll||dragFix) {
         mouse_report.h =mouse_report.x;
         mouse_report.v=-mouse_report.y;
 
@@ -180,10 +180,13 @@ bool process_record_kb(uint16_t keycode, keyrecord_t* record) {
         return false;
     }
 
-    if (keycode == DPI_CONFIG && record->event.pressed) {
+    if (keycode == DPI_CONFIG {&& record->event.pressed) {
         keyboard_config.dpi_config = (keyboard_config.dpi_config + 1) % DPI_OPTION_SIZE;
         eeconfig_update_kb(keyboard_config.raw);
         pointing_device_set_cpi(dpi_array[keyboard_config.dpi_config]);
+    }
+    if(keycode==CHANGEDRAGKEEP&& record->event.pressed){
+        dragFix=!dragFix;
     }
 
     if (keycode == DRAG_SCROLL) {
