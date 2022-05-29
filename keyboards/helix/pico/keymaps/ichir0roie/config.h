@@ -113,3 +113,33 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 // #define MK_W_INTERVAL_0 64// 360  // Time between scroll steps (KC_ACL0)  //
 // #define MK_W_INTERVAL_1 64 // 120  // Time between scroll steps (KC_ACL1)  //
 // #define MK_W_INTERVAL_2 64 // 20  // Time between scroll steps (KC_ACL2)
+
+
+#undef MATRIX_COL_PINS
+#define MATRIX_COL_PINS { B5, B6, F6, F7, B1, B3, B2 }
+// #define MATRIX_COL_PINS { F4, F5, B5, B6, B1, B3, B2 }
+
+
+
+// #define ENCODERS_PAD_A { B6 }
+// #define ENCODERS_PAD_B { B5 }
+#undef ENCODERS_PAD_A
+#undef ENCODERS_PAD_B
+
+
+
+// Max 32
+#define JOYSTICK_BUTTON_COUNT 0
+// Max 6: X, Y, Z, Rx, Ry, Rz
+#define JOYSTICK_AXES_COUNT 2
+
+
+
+
+
+
+
+
+
+
+

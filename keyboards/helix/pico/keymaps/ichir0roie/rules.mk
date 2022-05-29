@@ -3,3 +3,6 @@ RGBLIGHT_ENABLE = no
 AUDIO_ENABLE = no
 MOUSEKEY_ENABLE = yes
 KEY_OVERRIDE_ENABLE = yes
+
+JOYSTICK_ENABLE = yes
+JOYSTICK_DRIVER = analog # analog or 'digital'
