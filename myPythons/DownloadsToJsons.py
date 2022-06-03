@@ -13,3 +13,13 @@ for path in files:
     filename=path.split("\\")[-1]
     shutil.copy(path,outputPath+filename)
     os.remove(path)
+
+
+
+
+
+
+
+
+
+
