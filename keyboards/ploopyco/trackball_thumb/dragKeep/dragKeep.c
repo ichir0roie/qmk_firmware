@@ -72,7 +72,7 @@ bool keepDragScroll=false;
     # define DRAG_SCROLL_BETWEEEN 1000
 #endif
 
-bool dragFix=true;
+bool dragFix=false;
 
 
 __attribute__((weak)) bool encoder_update_user(uint8_t index, bool clockwise) { return true; }
@@ -180,7 +180,7 @@ bool process_record_kb(uint16_t keycode, keyrecord_t* record) {
         return false;
     }
 
-    if (keycode == DPI_CONFIG {&& record->event.pressed) {
+    if (keycode == DPI_CONFIG && record->event.pressed) {
         keyboard_config.dpi_config = (keyboard_config.dpi_config + 1) % DPI_OPTION_SIZE;
         eeconfig_update_kb(keyboard_config.raw);
         pointing_device_set_cpi(dpi_array[keyboard_config.dpi_config]);

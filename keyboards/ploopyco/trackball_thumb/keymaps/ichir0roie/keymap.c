@@ -39,6 +39,9 @@ const uint16_t PROGMEM keymaps[]
     [2] = LAYOUT(
         KC_NO,KC_NO,DPI_CONFIG,KC_NO,LGUI(KC_LEFT),LGUI(KC_RIGHT)
     ),
+    [3] = LAYOUT(
+        KC_0,KC_1,KC_2,TO(0),KC_3,KC_4
+    )
 };
 
 
@@ -68,7 +71,7 @@ combo_t key_combos[COMBO_COUNT] = {
     [CMB23]=COMBO(cmbKeys23, KC_BSPC),
     [CMB13]=COMBO(cmbKeys13, KC_ESC),
     // [CMB45]=COMBO(cmbKeys45, KC_BSPC),
-    [CMB41]=COMBO(cmbKeys41, TO(1)),
+    [CMB41]=COMBO(cmbKeys41, TO(3)),
     [CMB51]=COMBO(cmbKeys51, RESET),
     // [CMB52]=COMBO(cmbKeys52, KC_BSPC),
     // [TO_Game]=COMBO(toGameMode,TO(3)),
