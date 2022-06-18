@@ -1,6 +1,6 @@
 # Keymap for "Nora, Fearless Wings" with VIA support
 
-For `FW layout`, VIA supported basic keymap with external EEPROM.
+For `Full layout`, VIA supported basic keymap with external EEPROM.
 
 ## Layers
 
@@ -8,7 +8,7 @@ For `FW layout`, VIA supported basic keymap with external EEPROM.
 | :-- | :-: | :-- | :-- |
 | Base #1 | :white_check_mark: | n/a | JP layout |
 | Base #2 | :white_check_mark: | Blue | US layout |
-| Base #3 | :white_check_mark: | Yellow | Numeric pad at right hand. Transparent over Base #1 or Base #2. |
+| Base #3 | :white_check_mark: | Yellow | Numeric pad on center. Transparent over Base #1 or Base #2. |
 | Lower #1 | | Green | F-keys, Symbols & Audio controls for JP layout |
 | Lower #2 | | Chartreuse Green | F-keys, Symbols & Audio controls for US layout |
 | Lower #3 | | n/a | (Blank) |

@@ -1,0 +1,4 @@
+# # Use VIA
+# VIA_ENABLE = yes
+
+KEY_OVERRIDE_ENABLE = yes

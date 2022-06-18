@@ -17,12 +17,8 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 #pragma once
 
-#ifdef RGB_DI_PIN
-    #ifdef RGB_MATRIX_ENABLE
-        #undef DRIVER_LED_TOTAL
-        #define DRIVER_LED_TOTAL 64
-    #else
-        #undef RGBLED_NUM
-        #define RGBLED_NUM 64
-    #endif
-#endif
+// #undef TAPPING_TERM
+#define TAPPING_TERM 300
+// #define TAPPING_TOGGLE 3
+#define HOLD_ON_OTHER_KEY_PRESS
+#define TAPPING_FORCE_HOLD
