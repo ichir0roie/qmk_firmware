@@ -47,6 +47,7 @@ class CsvToKeyMap:
                 if layer=="":
                     continue
                 print("append")
+                layer=layer[:-2]+"\n"
                 layerList.append(layer)
                 layer=""
                 continue
@@ -59,6 +60,7 @@ class CsvToKeyMap:
             layer+="\n"
 
         if layer!="":
+            layer=layer[:-2]+"\n"
             layerList.append(layer)
 
         return layerList
