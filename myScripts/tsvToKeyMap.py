@@ -9,7 +9,7 @@ class CsvToKeyMap:
         self.loadTemplate()
 
     def compile(self,csvFileName:str,outputPath:str):
-        csvData=self.loadCsvData("myScripts/csv/{}.csv".format(csvFileName))
+        csvData=self.loadCsvData("myScripts/tsv/{}.tsv".format(csvFileName))
         layerList=self.convertLayerList(csvData)
         self.saveKeyMap(layerList,outputPath)
 
@@ -22,7 +22,7 @@ class CsvToKeyMap:
 
     def loadCsvDataList(self):
         csvDataList=[]
-        paths=glob.glob("myScripts/csv/*.csv")
+        paths=glob.glob("myScripts/tsv/*.tsv")
         print(paths)
         for path in paths:
             lines=self.loadCsvData(path)
@@ -31,7 +31,7 @@ class CsvToKeyMap:
 
     def loadCsvData(self,path):
         with open(path,"r",encoding="utf-8",newline="")as f:
-            r=csv.reader(f)
+            r=csv.reader(f,delimiter="\t")
             lines=[l for l in r]
         return lines
 
@@ -55,6 +55,8 @@ class CsvToKeyMap:
             layer+="\t\t"
             for key in line:
                 if len(key)<=0:
+                    continue
+                if key=="------":
                     continue
                 layer+=key+","
             layer+="\n"
