@@ -89,6 +89,7 @@ if __name__=="__main__":
     #     layerListList.append(ctk.convertLayerList(csvData))
     # ctk.compile("nora","myScripts/keymap/nora.c")
     ctk.compile("nora","keyboards/nora/v1/keymaps/ichir0roie/keymapManual.c")
+    ctk.compile("ergoarrows","keyboards/ergoarrows/keymaps/ichir0roie/keymapAG.c")
 
 
 
