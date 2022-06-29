@@ -23,9 +23,9 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
 // const key_override_t to4 = ko_make_basic(MOD_MASK_SHIFT, JP_QUOT, JP_GRV );//\_
 
 const key_override_t shift_top_0 = ko_make_basic(MOD_MASK_SHIFT, JP_PLUS, JP_MINS );//+-
-const key_override_t shift_top_1 = ko_make_basic(MOD_MASK_SHIFT, JP_DQUO, JP_AT );//"@
+const key_override_t shift_top_1 = ko_make_basic(MOD_MASK_SHIFT, JP_DQUO, JP_ASTR );//"*
 const key_override_t shift_top_2 = ko_make_basic(MOD_MASK_SHIFT, JP_QUOT, JP_HASH );//'#
-const key_override_t shift_top_3 = ko_make_basic(MOD_MASK_SHIFT, JP_UNDS, JP_ASTR );//_*
+const key_override_t shift_top_3 = ko_make_basic(MOD_MASK_SHIFT, JP_UNDS, JP_AT );//_@
 const key_override_t shift_top_4 = ko_make_basic(MOD_MASK_SHIFT, JP_PERC, JP_TILD );//%~
 const key_override_t shift_top_5 = ko_make_basic(MOD_MASK_SHIFT, JP_DLR, JP_CIRC );//$^
 const key_override_t shift_right_0 = ko_make_basic(MOD_MASK_SHIFT, JP_EQL, JP_EXLM );//=!
