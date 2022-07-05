@@ -37,9 +37,9 @@ const uint16_t PROGMEM keymaps[]
         KC_BTN4,KC_BTN5,KC_BTN1,TO(0),KC_BTN2,KC_BTN3
     ),
     [2] = LAYOUT(
-        KC_NO,KC_NO,DPI_CONFIG,KC_NO,LGUI(KC_LEFT),LGUI(KC_RIGHT)
+        KC_NO,KC_NO,DPI_CONFIG,KC_NO,LGUI(LCTL(KC_LEFT)),LGUI(LCTL(KC_RIGHT))
     ),
-    [3] = LAYOUT(
+    [3] = LAYOUT(2
         KC_0,KC_1,KC_BTN1,TO(0),KC_2,KC_3
     )
 };
@@ -64,8 +64,6 @@ enum combos{
     CMB51,
     // CMB52,
 };
-
-
 combo_t key_combos[COMBO_COUNT] = {
     [CMB12]=COMBO(cmbKeys12, LGUI(KC_TAB)),
     [CMB23]=COMBO(cmbKeys23, KC_BSPC),
