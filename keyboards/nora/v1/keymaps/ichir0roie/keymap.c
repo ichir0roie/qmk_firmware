@@ -15,19 +15,23 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
     return true;
 };
 
-// const key_override_t to0 = ko_make_basic(MOD_MASK_SHIFT, JP_ASTR, JP_TILD );//*~
-// const key_override_t to1 = ko_make_basic(MOD_MASK_SHIFT, JP_PLUS, JP_DLR );//+$
-// const key_override_t to2 = ko_make_basic(MOD_MASK_SHIFT, JP_MINS, JP_PERC );//-%
-// const key_override_t to3 = ko_make_basic(MOD_MASK_SHIFT, JP_DQUO, JP_CIRC );//"^
+const key_override_t shift_top_0 = ko_make_basic(MOD_MASK_SHIFT, JP_ASTR, JP_TILD );//*~
+const key_override_t shift_top_1 = ko_make_basic(MOD_MASK_SHIFT, JP_PLUS, JP_DLR );//+$
+const key_override_t shift_top_2 = ko_make_basic(MOD_MASK_SHIFT, JP_MINS, JP_PERC );//-%
+const key_override_t shift_top_3 = ko_make_basic(MOD_MASK_SHIFT, JP_QUOT, JP_CIRC );//'^
+const key_override_t shift_top_4 = ko_make_basic(MOD_MASK_SHIFT, JP_DQUO, JP_GRV );//"
+const key_override_t shift_top_5 = ko_make_basic(MOD_MASK_SHIFT, JP_BSLS, JP_AT );//
+const key_override_t shift_top_6 = ko_make_basic(MOD_MASK_SHIFT, JP_UNDS, JP_HASH );//
 //
 // const key_override_t to4 = ko_make_basic(MOD_MASK_SHIFT, JP_QUOT, JP_GRV );//\_
 
-const key_override_t shift_top_0 = ko_make_basic(MOD_MASK_SHIFT, JP_PLUS, JP_MINS );//+-
-const key_override_t shift_top_1 = ko_make_basic(MOD_MASK_SHIFT, JP_DQUO, JP_ASTR );//"*
-const key_override_t shift_top_2 = ko_make_basic(MOD_MASK_SHIFT, JP_QUOT, JP_HASH );//'#
-const key_override_t shift_top_3 = ko_make_basic(MOD_MASK_SHIFT, JP_UNDS, JP_AT );//_@
-const key_override_t shift_top_4 = ko_make_basic(MOD_MASK_SHIFT, JP_PERC, JP_TILD );//%~
-const key_override_t shift_top_5 = ko_make_basic(MOD_MASK_SHIFT, JP_DLR, JP_CIRC );//$^
+// const key_override_t shift_top_0 = ko_make_basic(MOD_MASK_SHIFT, JP_PLUS, JP_MINS );//+-
+// const key_override_t shift_top_1 = ko_make_basic(MOD_MASK_SHIFT, JP_DQUO, JP_ASTR );//"*
+// const key_override_t shift_top_2 = ko_make_basic(MOD_MASK_SHIFT, JP_QUOT, JP_HASH );//'#
+// const key_override_t shift_top_3 = ko_make_basic(MOD_MASK_SHIFT, JP_UNDS, JP_AT );//_@
+// const key_override_t shift_top_4 = ko_make_basic(MOD_MASK_SHIFT, JP_PERC, JP_TILD );//%~
+// const key_override_t shift_top_5 = ko_make_basic(MOD_MASK_SHIFT, JP_DLR, JP_CIRC );//$^
+
 const key_override_t shift_right_0 = ko_make_basic(MOD_MASK_SHIFT, JP_EQL, JP_EXLM );//=!
 const key_override_t shift_right_1 = ko_make_basic(MOD_MASK_SHIFT, JP_SCLN, JP_AMPR );//;&
 const key_override_t shift_right_2 = ko_make_basic(MOD_MASK_SHIFT, JP_COLN, JP_QUES );//:?
@@ -35,7 +39,6 @@ const key_override_t shift_right_3 = ko_make_basic(MOD_MASK_SHIFT, JP_SLSH, JP_P
 const key_override_t shift_br_0 = ko_make_basic(MOD_MASK_SHIFT, JP_LPRN, JP_RPRN );//()
 const key_override_t shift_br_1 = ko_make_basic(MOD_MASK_SHIFT, JP_LCBR, JP_RCBR );//{}
 const key_override_t shift_br_2 = ko_make_basic(MOD_MASK_SHIFT, JP_LBRC, JP_RBRC );//[]
-
 
 // const key_override_t to = ko_make_basic(MOD_MASK_SHIFT, JP_, JP_ );
 
@@ -47,6 +50,7 @@ const key_override_t **key_overrides = (const key_override_t *[]){
     &shift_top_3,
     &shift_top_4,
     &shift_top_5,
+    &shift_top_6,
     &shift_right_0,
     &shift_right_1,
     &shift_right_2,
@@ -57,6 +61,5 @@ const key_override_t **key_overrides = (const key_override_t *[]){
     NULL  // Null terminate the array of overrides!
 };
 
-
-#include <keymapManual.c>
+#include <keymapAG.c>
 

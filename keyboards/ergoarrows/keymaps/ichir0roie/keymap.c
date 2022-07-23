@@ -19,8 +19,9 @@ const key_override_t shift_top_0 = ko_make_basic(MOD_MASK_SHIFT, JP_ASTR, JP_TIL
 const key_override_t shift_top_1 = ko_make_basic(MOD_MASK_SHIFT, JP_PLUS, JP_DLR );//+$
 const key_override_t shift_top_2 = ko_make_basic(MOD_MASK_SHIFT, JP_MINS, JP_PERC );//-%
 const key_override_t shift_top_3 = ko_make_basic(MOD_MASK_SHIFT, JP_QUOT, JP_CIRC );//'^
-const key_override_t shift_top_4 = ko_make_basic(MOD_MASK_SHIFT, JP_DQUO, JP_AT );//"@
-const key_override_t shift_top_5 = ko_make_basic(MOD_MASK_SHIFT, JP_BSLS, JP_HASH );//\#
+const key_override_t shift_top_4 = ko_make_basic(MOD_MASK_SHIFT, JP_DQUO, JP_GRV );//"
+const key_override_t shift_top_5 = ko_make_basic(MOD_MASK_SHIFT, JP_BSLS, JP_AT );//
+const key_override_t shift_top_6 = ko_make_basic(MOD_MASK_SHIFT, JP_UNDS, JP_HASH );//
 //
 // const key_override_t to4 = ko_make_basic(MOD_MASK_SHIFT, JP_QUOT, JP_GRV );//\_
 
@@ -49,6 +50,7 @@ const key_override_t **key_overrides = (const key_override_t *[]){
     &shift_top_3,
     &shift_top_4,
     &shift_top_5,
+    &shift_top_6,
     &shift_right_0,
     &shift_right_1,
     &shift_right_2,
