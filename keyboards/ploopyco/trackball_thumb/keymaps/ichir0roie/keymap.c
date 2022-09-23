@@ -39,7 +39,7 @@ const uint16_t PROGMEM keymaps[]
     [2] = LAYOUT(
         KC_NO,KC_NO,DPI_CONFIG,KC_NO,LGUI(LCTL(KC_LEFT)),LGUI(LCTL(KC_RIGHT))
     ),
-    [3] = LAYOUT(2
+    [3] = LAYOUT(
         KC_0,KC_1,KC_BTN1,TO(0),KC_2,KC_3
     )
 };
