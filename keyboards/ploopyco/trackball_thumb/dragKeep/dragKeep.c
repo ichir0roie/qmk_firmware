@@ -67,12 +67,10 @@ bool     is_drag_scroll    = false;
 
 int mouseMemoY      = 0;
 int mouseMemoYC      = 0;
-bool keepDragScroll=false;
 # ifndef DRAG_SCROLL_BETWEEEN
     # define DRAG_SCROLL_BETWEEEN 1000
 #endif
 
-bool dragFix=false;
 
 
 __attribute__((weak)) bool encoder_update_user(uint8_t index, bool clockwise) { return true; }
@@ -135,26 +133,25 @@ __attribute__((weak)) void process_mouse_user(report_mouse_t* mouse_report, int1
 
 report_mouse_t pointing_device_task_kb(report_mouse_t mouse_report) {
 
-    if (is_drag_scroll||dragFix) {
+    if (is_drag_scroll) {
         mouse_report.h =mouse_report.x;
         mouse_report.v=-mouse_report.y;
 
-        if(keepDragScroll){
-            if(mouse_report.y==0){
-                mouseMemoYC+=abs(mouseMemoY);
-                if(mouseMemoYC>DRAG_SCROLL_BETWEEEN){
-                    mouse_report.v = -mouseMemoY/abs(mouseMemoY);
-                    mouseMemoYC=0;
-                }
+        if(mouse_report.y==0){
+            mouseMemoYC+=abs(mouseMemoY);
+            if(mouseMemoYC>DRAG_SCROLL_BETWEEEN){
+                mouse_report.v = -mouseMemoY/abs(mouseMemoY);
+                mouseMemoYC=0;
+            }
+        }else{
+            if(mouseMemoY*mouse_report.y<0){
+                mouseMemoY=0;
+                // keepDragScroll=false;
             }else{
-                if(mouseMemoY*mouse_report.y<0){
-                    mouseMemoY=0;
-                    keepDragScroll=false;
-                }else{
-                    mouseMemoY+=mouse_report.y;
-                }
+                mouseMemoY+=mouse_report.y;
             }
         }
+        
 
         mouse_report.x = 0;
         mouse_report.y = 0;
@@ -185,9 +182,6 @@ bool process_record_kb(uint16_t keycode, keyrecord_t* record) {
         eeconfig_update_kb(keyboard_config.raw);
         pointing_device_set_cpi(dpi_array[keyboard_config.dpi_config]);
     }
-    if(keycode==CHANGEDRAGKEEP&& record->event.pressed){
-        dragFix=!dragFix;
-    }
 
     if (keycode == DRAG_SCROLL) {
 #ifndef PLOOPY_DRAGSCROLL_MOMENTARY
@@ -196,7 +190,6 @@ bool process_record_kb(uint16_t keycode, keyrecord_t* record) {
         {
             is_drag_scroll ^= 1;
         }
-        keepDragScroll=true;
 #ifdef PLOOPY_DRAGSCROLL_FIXED
         pointing_device_set_cpi(is_drag_scroll ? PLOOPY_DRAGSCROLL_DPI : dpi_array[keyboard_config.dpi_config]);
 #else
