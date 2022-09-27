@@ -18,7 +18,7 @@ joystick_config_t joystick_axes[JOYSTICK_AXES_COUNT] = {
 
 };
 
-bool modeCursor=false;
+bool modeCursor=true;
 
 enum custom_keycodes{
     MODE_CURSOR=SAFE_RANGE

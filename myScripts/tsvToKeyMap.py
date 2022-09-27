@@ -1,6 +1,9 @@
 import glob
 import csv
 
+
+import sys
+
 class CsvToKeyMap:
     def __init__(self):
 
@@ -83,13 +86,19 @@ class CsvToKeyMap:
 
 if __name__=="__main__":
     ctk=CsvToKeyMap()
+    args=sys.argv
+    
+    keyboard=args[1]
+    path=args[2]
+        
     # csvDataList,paths=ctk.loadCsvDataList()
     # layerListList=[]
     # for csvData in csvDataList:
     #     layerListList.append(ctk.convertLayerList(csvData))
     # ctk.compile("nora","myScripts/keymap/nora.c")
-    ctk.compile("nora","keyboards/nora/v1/keymaps/ichir0roie/keymapAG.c")
-    ctk.compile("ergoarrows","keyboards/ergoarrows/keymaps/ichir0roie/keymapAG.c")
+    # ctk.compile("nora","keyboards/nora/v1/keymaps/ichir0roie/keymapAG.c")
+    # ctk.compile("ergoarrows","keyboards/ergoarrows/keymaps/ichir0roie/keymapAG.c")
+    ctk.compile(keyboard,path)
 
 
 
