@@ -37,9 +37,9 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 // #define TAPPING_TOGGLE 3
 
 // #define HOLD_ON_OTHER_KEY_PRESS
-// #define TAPPING_FORCE_HOLD
+#define TAPPING_FORCE_HOLD
 
 // #define MK_COMBINED
 
-#define PERMISSIVE_HOLD
+// #define PERMISSIVE_HOLD
 
