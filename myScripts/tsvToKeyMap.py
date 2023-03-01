@@ -88,17 +88,18 @@ if __name__=="__main__":
     ctk=CsvToKeyMap()
     args=sys.argv
     
-    keyboard=args[1]
-    path=args[2]
+    if len(args)>1:
         
-    # csvDataList,paths=ctk.loadCsvDataList()
-    # layerListList=[]
-    # for csvData in csvDataList:
-    #     layerListList.append(ctk.convertLayerList(csvData))
-    # ctk.compile("nora","myScripts/keymap/nora.c")
-    # ctk.compile("nora","keyboards/nora/v1/keymaps/ichir0roie/keymapAG.c")
-    # ctk.compile("ergoarrows","keyboards/ergoarrows/keymaps/ichir0roie/keymapAG.c")
-    ctk.compile(keyboard,path)
+        keyboard=args[1]
+        path=args[2]
+            
+        
+        ctk.compile(keyboard,path)
+    else:
+        ctk.compile("nora","keyboards/nora/v1/keymaps/ichir0roie/keymapAG.c")
+        ctk.compile("ergoarrows","keyboards/ergoarrows/keymaps/ichir0roie/keymapAG.c")
+        ctk.compile("helix","keyboards/helix/rev3_4rows/keymaps/ichir0roie/keymapAG.c")
+        
 
 
 
