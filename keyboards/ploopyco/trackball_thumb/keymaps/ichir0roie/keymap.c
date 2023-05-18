@@ -31,7 +31,7 @@
 const uint16_t PROGMEM keymaps[]
 [MATRIX_ROWS][MATRIX_COLS] = {
     [0] = LAYOUT(
-        Bt4,Bt5,Bt1,BtSc,Bt2,Bt3
+        Bt4,Bt5,Bt1,TO(3),Bt2,Bt3
     ),
     [1] = LAYOUT(
         KC_BTN4,KC_BTN5,KC_BTN1,TO(0),KC_BTN2,KC_BTN3
@@ -40,7 +40,7 @@ const uint16_t PROGMEM keymaps[]
         KC_NO,KC_NO,DPI_CONFIG,KC_NO,LGUI(LCTL(KC_LEFT)),LGUI(LCTL(KC_RIGHT))
     ),
     [3] = LAYOUT(
-        KC_0,KC_1,KC_BTN1,TO(0),KC_2,KC_3
+        KC_BTN4,KC_BTN5,KC_BTN1,TO(0),KC_BTN2,KC_BTN3
     )
 };
 
@@ -60,7 +60,7 @@ enum combos{
     CMB23,
     CMB13,
     // CMB45,
-    CMB41,
+    // CMB41,
     CMB51,
     // CMB52,
 };
@@ -69,7 +69,7 @@ combo_t key_combos[COMBO_COUNT] = {
     [CMB23]=COMBO(cmbKeys23, KC_BSPC),
     [CMB13]=COMBO(cmbKeys13, KC_ESC),
     // [CMB45]=COMBO(cmbKeys45, KC_BSPC),
-    [CMB41]=COMBO(cmbKeys41, TO(3)),
+    // [CMB41]=COMBO(cmbKeys41, TO(3)),
     [CMB51]=COMBO(cmbKeys51, RESET),
     // [CMB52]=COMBO(cmbKeys52, KC_BSPC),
     // [TO_Game]=COMBO(toGameMode,TO(3)),

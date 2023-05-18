@@ -28,6 +28,3 @@ qmk flash -kb ergodash/rev1 -km ichir0roie;
 
 
 
-
-
-
