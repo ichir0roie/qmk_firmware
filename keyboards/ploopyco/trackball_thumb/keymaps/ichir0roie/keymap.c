@@ -37,7 +37,7 @@ const uint16_t PROGMEM keymaps[]
         KC_BTN4,KC_BTN5,KC_BTN1,TO(0),KC_BTN2,KC_BTN3
     ),
     [2] = LAYOUT(
-        KC_NO,KC_NO,DPI_CONFIG,KC_NO,LGUI(LCTL(KC_LEFT)),LGUI(LCTL(KC_RIGHT))
+        KC_NO,KC_NO,DPI_CONFIG,KC_NO,LCTL(KC_C),LCTL(KC_V)
     ),
     [3] = LAYOUT(
         KC_0,KC_1,KC_BTN1,TO(0),KC_2,KC_3
