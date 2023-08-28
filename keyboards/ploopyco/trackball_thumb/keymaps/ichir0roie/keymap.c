@@ -56,20 +56,20 @@ const uint16_t PROGMEM cmbKeys52[] = {Bt5, Bt2, COMBO_END};
 // const uint16_t PROGMEM test_combo2[] = {KC_C, KC_D, COMBO_END};
 
 enum combos{
-    CMB12,
+    // CMB12,
     CMB23,
     CMB13,
     // CMB45,
-    // CMB41,
+    CMB41,
     CMB51,
     // CMB52,
 };
 combo_t key_combos[COMBO_COUNT] = {
-    [CMB12]=COMBO(cmbKeys12, LGUI(KC_TAB)),
+    // [CMB12]=COMBO(cmbKeys12, LGUI(KC_TAB)),
     [CMB23]=COMBO(cmbKeys23, KC_BSPC),
     [CMB13]=COMBO(cmbKeys13, KC_ESC),
     // [CMB45]=COMBO(cmbKeys45, KC_BSPC),
-    // [CMB41]=COMBO(cmbKeys41, TO(3)),
+    [CMB41]=COMBO(cmbKeys41, DPI_CONFIG),
     [CMB51]=COMBO(cmbKeys51, RESET),
     // [CMB52]=COMBO(cmbKeys52, KC_BSPC),
     // [TO_Game]=COMBO(toGameMode,TO(3)),
