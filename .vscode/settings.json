@@ -39,5 +39,6 @@
             "args": ["--login"]
         }
     },
-    "terminal.integrated.cursorStyle": "line"
+    "terminal.integrated.cursorStyle": "line",
+    "git.ignoreLimitWarning": true
 }
