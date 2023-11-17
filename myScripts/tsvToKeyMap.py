@@ -81,9 +81,10 @@ class CsvToKeyMap:
             layerTexts+=layerText
         layerTexts=layerTexts.replace("\n\n", "\n")
         text=text.replace("{layouts}", layerTexts[:-1])
+        os.makedirs(os.path.dirname(path),exist_ok=True)
         with open(path,"w",encoding="utf-8")as f:
             f.write(text)
-
+import os
 if __name__=="__main__":
     ctk=CsvToKeyMap()
     args=sys.argv

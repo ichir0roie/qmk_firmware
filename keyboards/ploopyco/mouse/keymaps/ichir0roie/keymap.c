@@ -4,18 +4,18 @@
 /*
             1   2       4   5
                     3
-        6
-                    8
         7
+                    8
+        6
 */
 
-# define Bt1 DRAG_SCROLL
+# define Bt1 KC_ENTER
 # define Bt2 KC_BTN1
 # define Bt3 KC_BTN3
 # define Bt4 KC_BTN2
 # define Bt5 LCTL_T(KC_DEL)
-# define Bt6 LT(1,KC_ENTER)
-# define Bt7 LT(2,KC_LGUI)
+# define Bt6 LT(1,KC_LGUI)
+# define Bt7 DRAG_SCROLL
 # define Bt8 DPI_CONFIG
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
@@ -30,7 +30,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         Bt8
     ),
     [1] = LAYOUT(
-        Bt1,
+        KC_NO,
         LGUI(LCTL(KC_LEFT)),
         Bt3,
         LGUI(LCTL(KC_RIGHT)),
