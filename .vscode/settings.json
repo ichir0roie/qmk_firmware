@@ -6,7 +6,8 @@
     "files.exclude": {
         "**/.build": true,
         "**/*.hex": true,
-        "**/*.bin": true
+        "**/*.bin": true,
+        "**/*.uf2": true
     },
     "files.associations": {
         "*.h": "c",
@@ -27,18 +28,7 @@
     "[json]": {
         "editor.formatOnSave": false
     },
-    "C_Cpp.errorSquiggles": "Disabled",
-    //https://docs.qmk.fm/#/other_vscode
-    "terminal.integrated.profiles.windows": {
-        "QMK_MSYS": {
-            "path": "C:/QMK_MSYS/usr/bin/bash.exe",
-            "env": {
-                "MSYSTEM": "MINGW64",
-                "CHERE_INVOKING": "1"
-            },
-            "args": ["--login"]
-        }
-    },
-    "terminal.integrated.cursorStyle": "line",
-    "git.ignoreLimitWarning": true
+    "clangd.arguments": [
+        "--header-insertion=never"
+    ]
 }
