@@ -100,8 +100,8 @@ if __name__ == "__main__":
 
         ctk.compile(keyboard, path)
     else:
-        ctk.compile("nora", "keyboards/nora/v1/keymaps/ichir0roie/keymapAG.c")
+        # ctk.compile("nora", "keyboards/nora/v1/keymaps/ichir0roie/keymapAG.c")
         ctk.compile(
-            "ergoarrows", "keyboards/ergoarrows/keymaps/ichir0roie/keymapAG.c")
+            "ergoarrows", "keyboards/salicylic_acid3/ergoarrows/keymaps/ichir0roie/keymapAG.c")
         ctk.compile(
             "teihai70h", "keyboards/teihai70h_ichir0roie/keymaps/default/keymapAG.c")

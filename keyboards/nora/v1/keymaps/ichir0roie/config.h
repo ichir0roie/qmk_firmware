@@ -17,16 +17,8 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 #pragma once
 
-<<<<<<< HEAD:keyboards/nora/v1/keymaps/ichir0roie/config.h
-// #undef TAPPING_TERM
-#define TAPPING_TERM 150
-// #define TAPPING_TOGGLE 3
-#define HOLD_ON_OTHER_KEY_PRESS
-#define TAPPING_FORCE_HOLD
-=======
 /* Select hand configuration */
 
 #define QUICK_TAP_TERM 0
 #define TAPPING_TERM 180
 //#define MASTER_RIGHT
->>>>>>> fork_origin/master:keyboards/basekeys/slice/rev1/keymaps/2moons/config.h

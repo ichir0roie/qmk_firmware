@@ -1,5 +1,8 @@
-#include <keymap_jp.h>
-#include <sendstring_jis.h>
+
+#include QMK_KEYBOARD_H
+// #include <keymap_jp.h>
+#include <keymap_japanese.h>
+// #include <sendstring_jis.h>
 
 
 enum custom_keycodes {

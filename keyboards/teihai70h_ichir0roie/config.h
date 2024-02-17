@@ -54,5 +54,4 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 // #undef TAPPING_TERM
 #define TAPPING_TERM 150
-#define NO_ACTION_TAPPING
-
+#define QUICK_TAP_TERM 0
