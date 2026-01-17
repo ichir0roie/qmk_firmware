@@ -6,7 +6,7 @@
     "files.exclude": {
         // "**/.build": true,
         "**/*.hex": true,
-        "**/*.bin": true,
+        "**/*.bin": true
         // "**/*.uf2": true
     },
     "files.associations": {
@@ -28,8 +28,7 @@
     "[json]": {
         "editor.formatOnSave": false
     },
-    "clangd.arguments": [
-        "--header-insertion=never"
-    ],
-    "jupyter.notebookFileRoot": "${workspaceFolder}"
+    "clangd.arguments": ["--header-insertion=never"],
+    "jupyter.notebookFileRoot": "${workspaceFolder}",
+    "git.detectSubmodules": false
 }
