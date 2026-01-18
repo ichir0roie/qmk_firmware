@@ -30,4 +30,8 @@ Diagnostics:
             asm_invalid_input_constraint,
             invalid_asm_value_for_constraint,
             anyx86_interrupt_attribute,
+            pp_expects_filename,
+            undeclared_var_use,
+            unknown_typename,
+            -Wimplicit-function-declaration,
         ]
