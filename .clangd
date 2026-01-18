@@ -34,4 +34,5 @@ Diagnostics:
             undeclared_var_use,
             unknown_typename,
             -Wimplicit-function-declaration,
+            pp_file_not_found,
         ]

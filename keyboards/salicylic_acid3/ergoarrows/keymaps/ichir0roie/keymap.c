@@ -1,22 +1,8 @@
-
 #include QMK_KEYBOARD_H
 // #include <keymap_jp.h>
 #include <keymap_japanese.h>
 // #include <sendstring_jis.h>
 
-
-enum custom_keycodes {
-        QMKBEST = SAFE_RANGE
-    };
-
-
-
-bool process_record_user(uint16_t keycode, keyrecord_t *record) {
-    switch (keycode) {
-        case QMKBEST:if (record->event.pressed) SEND_STRING("QMK is the best thing ever!");break;
-    }
-    return true;
-};
 
 const key_override_t shift_top_0 = ko_make_basic(MOD_MASK_SHIFT, JP_ASTR, JP_TILD );//*~
 const key_override_t shift_top_1 = ko_make_basic(MOD_MASK_SHIFT, JP_PLUS, JP_DLR );//+$
@@ -39,6 +25,7 @@ const key_override_t shift_right_0 = ko_make_basic(MOD_MASK_SHIFT, JP_EQL, JP_EX
 const key_override_t shift_right_1 = ko_make_basic(MOD_MASK_SHIFT, JP_SCLN, JP_AMPR );//;&
 const key_override_t shift_right_2 = ko_make_basic(MOD_MASK_SHIFT, JP_COLN, JP_QUES );//:?
 const key_override_t shift_right_3 = ko_make_basic(MOD_MASK_SHIFT, JP_SLSH, JP_PIPE );// /|
+
 const key_override_t shift_br_0 = ko_make_basic(MOD_MASK_SHIFT, JP_LPRN, JP_RPRN );//()
 const key_override_t shift_br_1 = ko_make_basic(MOD_MASK_SHIFT, JP_LCBR, JP_RCBR );//{}
 const key_override_t shift_br_2 = ko_make_basic(MOD_MASK_SHIFT, JP_LBRC, JP_RBRC );//[]
@@ -46,7 +33,7 @@ const key_override_t shift_br_2 = ko_make_basic(MOD_MASK_SHIFT, JP_LBRC, JP_RBRC
 // const key_override_t to = ko_make_basic(MOD_MASK_SHIFT, JP_, JP_ );
 
 // This globally defines all key overrides to be used
-const key_override_t **key_overrides = (const key_override_t *[]){
+const key_override_t *key_overrides[] ={
     &shift_top_0,
     &shift_top_1,
     &shift_top_2,
@@ -60,8 +47,7 @@ const key_override_t **key_overrides = (const key_override_t *[]){
     &shift_right_3,
     &shift_br_0,
     &shift_br_1,
-    &shift_br_2,
-    NULL  // Null terminate the array of overrides!
+    &shift_br_2
 };
 
 #include <keymapAG.c>
