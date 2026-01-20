@@ -1,5 +1,8 @@
 /*
-Copyright 2021 Salicylic_Acid
+This is the c configuration file for the keymap
+
+Copyright 2012 Jun Wako <wakojun@gmail.com>
+Copyright 2015 Jack Humbert
 
 This program is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
@@ -17,31 +20,26 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 #pragma once
 
-#define SPLIT_HAND_PIN B6
 
-/* Mechanical locking support. Use KC_LCAP, KC_LNUM or KC_LSCR instead in keymap */
-#define LOCKING_SUPPORT_ENABLE
-/* Locking resynchronize hack */
-#define LOCKING_RESYNC_ENABLE
+/* Use I2C or Serial, not both */
 
-#ifndef IOS_DEVICE_ENABLE
-  #define RGBLIGHT_LIMIT_VAL 90
-  #define RGBLIGHT_VAL_STEP 17
-#else
-  #define RGBLIGHT_LIMIT_VAL 30
-  #define RGBLIGHT_VAL_STEP 4
-#endif
+#define USE_SERIAL
+// #define USE_I2C
 
-#if defined(RGBLIGHT_ENABLE) && !defined(IOS_DEVICE_ENABLE)
-// USB_MAX_POWER_CONSUMPTION value for naked48 keyboard
-//  120  RGBoff, OLEDoff
-//  120  OLED
-//  330  RGB 6
-//  300  RGB 32
-//  310  OLED & RGB 32
-  #define USB_MAX_POWER_CONSUMPTION 400
-#else
-  // fix iPhone and iPad power adapter issue
-  // iOS device need lessthan 100
-  #define USB_MAX_POWER_CONSUMPTION 100
-#endif
+/* Select hand configuration */
+
+#define MASTER_LEFT
+// #define MASTER_RIGHT
+// #define EE_HANDS
+
+// #undef TAPPING_TERM
+// #define TAPPING_TERM 150
+// #define TAPPING_TOGGLE 3
+
+// #define HOLD_ON_OTHER_KEY_PRESS
+#define TAPPING_FORCE_HOLD
+
+// #define MK_COMBINED
+
+// #define PERMISSIVE_HOLD
+
