@@ -73,6 +73,12 @@ report_mouse_t pointing_device_task_user(report_mouse_t mouse_report) {
 
 // Modify these values to adjust the scrolling speed
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
-    [0] = LAYOUT(/* Base */
-                 CUSTOM_DRAG_SCROLL, MS_BTN1, KC_NO, MS_BTN2, KC_RIGHT_CTRL, QK_BOOTLOADER),
+    [0] = LAYOUT(
+        CUSTOM_DRAG_SCROLL, MS_BTN1, KC_NO, MS_BTN2, KC_RIGHT_CTRL,
+        MO(1)
+    ),
+    [1] = LAYOUT(
+        QK_BOOTLOADER, KC_NO, KC_NO, KC_ENTER, KC_DELETE,
+        KC_TRNS
+    ),
 };
