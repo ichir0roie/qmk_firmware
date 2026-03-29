@@ -1,0 +1,6 @@
+# This file intentionally left blank
+BACKLIGHT_ENABLE = no
+RGBLIGHT_ENABLE = no
+AUDIO_ENABLE = no
+KEY_OVERRIDE_ENABLE = yes
+BOOTLOADER=rp2040
