@@ -27,7 +27,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         MO(1)
     ),
     [1] = LAYOUT(
-        QK_BOOTLOADER, KC_NO, KC_NO, KC_ENTER, KC_DELETE,
+        KC_NO, QK_BOOTLOADER, KC_NO, KC_ENTER, KC_DELETE,
         KC_TRNS
     ),
 };
