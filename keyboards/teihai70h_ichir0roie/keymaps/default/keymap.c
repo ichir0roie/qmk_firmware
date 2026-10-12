@@ -50,5 +50,15 @@ const key_override_t *key_overrides[] ={
     &shift_br_2
 };
 
+// スペース(親指Shift)だけ、ホールド判定後に単独で離したらタップとして送る
+bool get_retro_tapping(uint16_t keycode, keyrecord_t *record) {
+    switch (keycode) {
+        case LSFT_T(KC_SPC):
+            return true;
+        default:
+            return false;
+    }
+}
+
 #include <keymapAG.c>
 
