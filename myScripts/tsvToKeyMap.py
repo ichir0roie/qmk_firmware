@@ -42,7 +42,8 @@ class CsvToKeyMap:
     def convertLayerList(self, csvData: list):
         layerList = []
         layer = ""
-        for line in csvData:  # type:list
+        line:list
+        for line in csvData:
             print(line)
             if len(line) <= 0:
                 print("continue")
@@ -62,6 +63,8 @@ class CsvToKeyMap:
                     continue
                 if key == "------":
                     continue
+                if key=="_":
+                    key="KC_NO"
                 layer += key + ","
             layer += "\n"
 

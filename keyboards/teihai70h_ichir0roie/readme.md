@@ -4,7 +4,7 @@
 
 *A short description of the keyboard/project*
 
-* Keyboard Maintainer: [ichi0roie](https://github.com/ichi0roie)
+* Keyboard Maintainer: [ichiro.togawa](https://github.com/ichiro.togawa)
 * Hardware Supported: *The PCBs, controllers supported*
 * Hardware Availability: *Links to where you can find this hardware*
 
