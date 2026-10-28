@@ -20,7 +20,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #ifdef RGB_MATRIX_ENABLE
 led_config_t g_led_config = {
 
-    #if DRIVER_LED_TOTAL == 71 // Full layout
+    #if RGB_MATRIX_LED_COUNT == 71 // Full layout
     {
     // Key Matrix to LED Index
     {      0,      2,      4,      6,      8,     10,     12,     14 },
@@ -50,7 +50,7 @@ led_config_t g_led_config = {
     }
     #endif
 
-    #if DRIVER_LED_TOTAL == 64 // FW layout
+    #if RGB_MATRIX_LED_COUNT == 64 // FW layout
     {
     // Key Matrix to LED Index
     {      0,      2,      4,      6, NO_LED,      8,     10,     12 },
@@ -80,7 +80,7 @@ led_config_t g_led_config = {
     }
     #endif
 
-    #if DRIVER_LED_TOTAL == 62 // RE layout
+    #if RGB_MATRIX_LED_COUNT == 62 // RE layout
     {
     // Key Matrix to LED Index
     {      0,      2,      4,      6, NO_LED,      8,     10,     12 },
@@ -117,12 +117,12 @@ led_config_t g_led_config = {
 //------------------------------------------------------------------------------
 // Rotary Encoder with VIA
 //------------------------------------------------------------------------------
-static uint8_t  encoder_state[ENCODERS] = {0};
-static keypos_t encoder_cw[ENCODERS]    = ENCODERS_CW_KEY;
-static keypos_t encoder_ccw[ENCODERS]   = ENCODERS_CCW_KEY;
+static uint8_t  encoder_state[NUM_ENCODERS] = {0};
+static keypos_t encoder_cw[NUM_ENCODERS]    = ENCODERS_CW_KEY;
+static keypos_t encoder_ccw[NUM_ENCODERS]   = ENCODERS_CCW_KEY;
 
 void encoder_action_unregister(void) {
-    for (int index = 0; index < ENCODERS; ++index) {
+    for (int index = 0; index < NUM_ENCODERS; ++index) {
         if (encoder_state[index]) {
             keyevent_t encoder_event = (keyevent_t) {
                 .key = encoder_state[index] >> 1 ? encoder_cw[index] : encoder_ccw[index],
